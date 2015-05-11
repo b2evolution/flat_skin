@@ -1,11 +1,7 @@
 # Flat Skin for b2evolution CMS v6
 
-## Some tips:
+Awesome Flat Blog Skin
 
-- Create a 720x570 pixels `skinshot.png` file for use within b2evolution to visually identify your skin.
-- Add some `skinshot_disp.jpg` images to demo the different "disps" of your skin(change the `_disp` part. See included `skinshot_posts.jpg` for example. 
-- You can also add additional images by numbering them, e-g: `skinshot_single_02.jpg`
-- When you publish your skin, update this readme.md file (it uses Markdown syntax), remove the instructions and include your skinshots like this:
 
 ### Front Page
 

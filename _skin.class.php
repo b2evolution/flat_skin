@@ -23,7 +23,7 @@ class flat_Skin extends Skin
 	 */
 	function get_default_name()
 	{
-		return 'Flat Blog (Bootstrap)';
+		return 'Flat Blog';
 	}
 
 
