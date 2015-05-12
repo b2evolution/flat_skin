@@ -9,23 +9,137 @@
 
 /*---------------  End of Themes Info  ---------------*/
 
-
 /**
- * 1.0 HEAD STRUCTURE
+ * 1.0 BASIC STRUCTURE
  * -----------------------------------------------------------------------------
  */
-.pageHeader {
-	margin-bottom: 20px;
+
+ @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,500,700,900);
+
+body{
+  background-color: #F2F2F2;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
+
+/**
+ * 1.0 NAV STRUCTURE
+ * -----------------------------------------------------------------------------
+ */
+
+nav#nav{
+  background-color: #34495E;
+
+
+  .nav-tabs{
+    border-bottom: none;
+    margin: 20px 0;
+    float: right;
+
+    li{
+
+      a{
+        font-size: 15px;
+        color: #BDC3C7;
+        border-radius: 5px;
+        border: none;
+        -moz-transition: all 0.32s ease;
+        -webkit-transition: all 0.32s ease;
+        -o-transition: all 0.32s ease;
+        transition: all 0.32s ease;
+
+        &:hover{
+          background-color: #2c3e50;
+          color: #ffffff;
+          border: none;
+        }
+      }
+    }
+
+    li.active {
+
+      & > a{
+        color: #ffffff;
+        background-color: #2c3e50;
+      }
+    }
+
+  }
+
+}
+
+ .nav.nav-tabs {
+   margin-top: 0;
+ }
+
+
+/**
+ * 1.0 HEADER STRUCTURE
+ * -----------------------------------------------------------------------------
+ */
+
+header#header{
+  background-color: #2ECC71;
+  padding: 30px 0;
+  margin-bottom: 20px;
+
+
+
+  ////////////////////////////////////////////////////////////////
+  // WIDGET
+
+  .pageHeader {
+  	margin-bottom: 20px;
+
+    .widget.widget_core_coll_title{
+      h1{
+        margin: 10px 0 5px;
+        a{
+          color: #FFFFFF;
+
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .widget.widget_core_coll_tagline{
+      color: #FFFFFF;
+    }
+  }
+
+  .PageTop{
+
+    .widget.widget_core_user_links{
+
+      .ufld_icon_links{
+        a{
+          color: #34495E;
+          background: #FFFFFF;
+        }
+      }
+    }
+  }
+
+}
+
+
+
 .PageTop {
 	margin-top: 20px;
 	.widget--social-media-links {
 		text-align: right;
 	}
 }
-.nav.nav-tabs {
-	margin-top: 0;
-}
+
+
+
+/**
+ * 1.0 OTHER STRUCTURE
+ * -----------------------------------------------------------------------------
+ */
 
 // Login widget form
 .widget_core_user_login {
@@ -446,4 +560,123 @@ div.action_messages, div.log_container {
 		padding: 20px 0 10px 30px;
 		vertical-align: middle;
 	}
+}
+
+
+/**
+ * 1.0 FOOTER STRUCTURE
+ * -----------------------------------------------------------------------------
+ */
+
+footer#footer{
+  background-color: #34495E;
+  color: #CDCDCD;
+  padding: 35px 0 0;
+
+
+
+  ////////////////////////////////////////////////////////////////
+  // Widget
+
+  .evo_widget.widget{
+    padding: 10px 0px 20px 0px;
+
+    h3{
+      color: #ffffff;
+      color: #FDFDFD;
+      font-weight: 300;
+      font-size: 25px;
+      margin: 20px 0;
+    }
+
+    &.widget_core_coll_post_list{
+      margin-bottom: 40px;
+
+      ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li{
+          display: block;
+          margin: 10px 0;
+          padding: 10px 0;
+          clear: both;
+
+          .item_title{
+            float: right;
+            width: 65%;
+
+            a{
+              color: #E7E7E7;
+              font-size: 15px;
+              line-height: 1.2;
+              display: inline-block;
+            }
+          }
+
+          .item_images{
+            float: left;
+          }
+        }
+      }
+    }
+
+    .tag_cloud{
+
+      a{
+        display: inline-block;
+        font-size: 15px !important;
+        font-weight: 300;
+        text-transform: capitalize;
+        color: #1B1B1B;
+        background-color: #FFFFFF;
+        padding: 8px 12px;
+        border-radius: 5px;
+        margin: 2px 1px;
+        -moz-transitiion: all 0.32s ease;
+        -webkit-transition: all 0.32s ease;
+        -o-transition: all 0.32s ease;
+        transition: all 0.32s ease;
+
+        &:hover{
+          text-decoration: none;
+          background-color: #2983C3;
+          color: #fff;
+        }
+      }
+    }
+
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Copyright
+
+  .footer_copyright{
+    padding: 30px 0px 15px 0px;
+    background-color: #2C3E50;
+    margin-top: 20px;
+
+    p.copyright{
+      float: left;
+    }
+
+    .footer_menu_copyright{
+      float: right;
+
+      a{
+        color: #E7E7E7;
+        text-decoration: none;
+
+        &:hover{
+          color: #fff;
+        }
+      }
+    }
+
+    .powered_by{
+      margin: 0;
+    }
+  }
+
 }
