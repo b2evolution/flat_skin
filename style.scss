@@ -579,14 +579,27 @@ nav#nav{
 
 #main_sidebar{
   border-left: 1px solid #EBEBEB;
-
+  overflow: hidden;
 }
 
 .panel.widget{
+  padding-bottom: 15px;
   border: none;
   box-shadow: none;
   background: transparent;
-  border: none;
+  position: relative;
+
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 1px;
+    background-color: #E7E7E7;
+    margin: 0 auto;
+  }
 
   .panel-heading{
     background: transparent;
@@ -596,6 +609,7 @@ nav#nav{
       color: #2E85AB;
       font-size: 25px;
       font-weight: 300;
+      position: relative;
 
       a{
         color: #2E85AB;
@@ -609,6 +623,44 @@ nav#nav{
     }
   }
 
+  .panel-body{
+
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li{
+        display: block;
+        margin: 0;
+        padding: 2px 0;
+
+        a{
+          position: relative;
+          padding: 2px 0 2px 20px;
+
+          &::before{
+            content: "\f105";
+            position: absolute;
+            left: 5px;
+            top: 0;
+            font-family: "FontAwesome";
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0);
+          }
+
+          &:hover{
+            text-decoration: none;
+            color: #333;
+          }
+
+        }
+      }
+    }
+  }
 
   ////////////////////////////////////////////////////////////////
   // WIDGET SIDEBAR STYLE
@@ -646,17 +698,21 @@ nav#nav{
           border: none;
           height: 45px;
           margin: 0;
+          box-shadow: none;
+          border: 1px solid transparent;
+          -moz-transition: all 0.32s ease;
+          -webkit-transition: all 0.32s ease;
+          -o-transition: all 0.32s ease;
+          transition: all 0.32s ease;
 
           &:hover{
             box-shadow: none;
-            border: none;
             margin: 0;
           }
 
-          &:focus,
-          &:active{
+          &:focus{
             outline: none;
-            border-color: transparent ;
+            border-color: #34495E;
             box-shadow: none;
           }
         }
@@ -664,7 +720,7 @@ nav#nav{
         input.search_submit{
           padding: 10px 20px;
           height: 45px;
-          border: none;
+          border: 1px solid transparent;
           outline: none;
           margin: 0;
           background: #34495E;
@@ -673,6 +729,86 @@ nav#nav{
             outline: none;
             border-color: transparent ;
             box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.widget_core_coll_tag_cloud{
+
+    .panel-body{
+
+      .tag_cloud{
+
+        a{
+          display: inline-block;
+          font-size: 14px !important;
+          padding: 8px 12px;
+          margin: 2px 1px;
+          background-color: #428BCA;
+          color: #fff;
+          text-transform: uppercase;
+          border-radius: 3px;
+          -webkit-transition: all 0.32s ease;
+          -o-transition: all 0.32s ease;
+          transition: all 0.32s ease;
+
+          &:hover{
+            text-decoration: none;
+            background-color: #064883;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &.widget_core_coll_post_list{
+
+    .panel-body{
+
+      ul{
+
+        li{
+          position: relative;
+          padding: 5px 0;
+
+          a{
+            display: block;
+          }
+
+          & > a{
+            padding: 0 0 0 20px;
+
+          }
+
+          .item_title{
+            position: absolute;
+            padding-left: 75px;
+
+            a{
+
+              &::before{
+                display: none;
+              }
+
+            }
+          }
+
+          .item_images{
+
+            a{
+              padding: 0;
+
+              &::before{
+                display: none;
+              }
+
+              img{
+
+              }
+            }
           }
         }
       }
@@ -706,7 +842,7 @@ footer#footer{
   }
 
   .evo_widget.widget{
-    padding: 0px 15px 25px 15px;
+    padding: 0px 15px 20px 15px;
     overflow: hidden;
 
     h3{
@@ -1006,7 +1142,7 @@ footer#footer{
   // Copyright
 
   .footer_copyright{
-    padding: 20px 0px 15px 0px;
+    padding: 30px 0px 5px 0px;
     background-color: #2C3E50;
     margin-top: 20px;
 
@@ -1032,4 +1168,11 @@ footer#footer{
     }
   }
 
+}
+
+body div.sitewide_footer {
+  background-color: #2C3E50;
+  box-shadow: none;
+  border-top: none;
+  padding: 5px 0 10px;
 }

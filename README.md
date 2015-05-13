@@ -5,7 +5,7 @@ Awesome Flat Blog Skin
 
 ### Front Page
 
-![disp=front](skinshot_front.jpg)
+![disp=front](skinshot_front.png)
 
 ### Posts Page
 
