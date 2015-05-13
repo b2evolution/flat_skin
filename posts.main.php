@@ -45,39 +45,6 @@ siteskin_include( '_site_body_header.inc.php' );
 <div class="container-fluid">
 	<div class="row">
 
-	<nav id="nav">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<ul class="nav nav-tabs">
-			<?php
-				// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-				// Display container and contents:
-				// Note: this container is designed to be a single <ul> list
-				skin_container( NT_('Menu'), array(
-						// The following params will be used as defaults for widgets included in this container:
-						'block_start'         => '',
-						'block_end'           => '',
-						'block_display_title' => false,
-						'list_start'          => '',
-						'list_end'            => '',
-						'item_start'          => '<li>',
-						'item_end'            => '</li>',
-						'item_selected_start' => '<li class="active">',
-						'item_selected_end'   => '</li>',
-						'item_title_before'   => '',
-						'item_title_after'    => '',
-					) );
-				// ----------------------------- END OF "Menu" CONTAINER -----------------------------
-			?>
-					</ul>
-				</div>
-			</div>
-			<!-- end row menu -->
-		</div>
-		<!-- end container nav -->
-	</nav>
-
 	<header id="header">
 		<div class="container">
 			<div class="row">
@@ -120,8 +87,41 @@ siteskin_include( '_site_body_header.inc.php' );
 			<!-- End row pagetop -->
 		</div>
 		<!-- end container header -->
-</header>
-<!-- end header -->
+	</header>
+	<!-- end header -->
+
+	<nav id="nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs">
+			<?php
+				// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+				// Display container and contents:
+				// Note: this container is designed to be a single <ul> list
+				skin_container( NT_('Menu'), array(
+						// The following params will be used as defaults for widgets included in this container:
+						'block_start'         => '',
+						'block_end'           => '',
+						'block_display_title' => false,
+						'list_start'          => '',
+						'list_end'            => '',
+						'item_start'          => '<li>',
+						'item_end'            => '</li>',
+						'item_selected_start' => '<li class="active">',
+						'item_selected_end'   => '</li>',
+						'item_title_before'   => '',
+						'item_title_after'    => '',
+					) );
+				// ----------------------------- END OF "Menu" CONTAINER -----------------------------
+			?>
+					</ul>
+				</div>
+			</div>
+			<!-- end row menu -->
+		</div>
+		<!-- end container nav -->
+	</nav>
 
 <!-- =================================== START OF MAIN AREA =================================== -->
 <div class="container">
@@ -421,6 +421,24 @@ siteskin_include( '_site_body_header.inc.php' );
 <footer id="footer">
 	<div class="container">
 		<div class="row">
+				<?php
+					// Display container and contents:
+					skin_container( NT_("Sidebar 2"), array(
+							'block_start' => '<div class="col-md-3 evo_widget widget $wi_class$">',
+							'block_end'  => '</div>'
+							// The following params will be used as defaults for widgets included in this container:
+						) );
+					// Note: Double quotes have been used around "Footer" only for test purposes.
+				?>
+			<div class="clearfix"></div>
+
+		</div>
+		<!-- End row Footer -->
+	</div>
+	<!-- End container footer -->
+
+	<div class="footer_copyright">
+		<div class="container">
 
 			<div class="col-md-12 center">
 				<?php
@@ -432,57 +450,6 @@ siteskin_include( '_site_body_header.inc.php' );
 				?>
 			</div>
 
-			<div class="clearfix"></div>
-
-			<div class="col-md-3">
-			<?php
-				// Display container and contents:
-				skin_container( NT_("Footer 1"), array(
-						// The following params will be used as defaults for widgets included in this container:
-					) );
-				// Note: Double quotes have been used around "Footer" only for test purposes.
-			?>
-			</div>
-
-			<div class="col-md-3">
-				<?php
-					// Display container and contents:
-					skin_container( NT_("Footer 2"), array(
-							// The following params will be used as defaults for widgets included in this container:
-						) );
-					// Note: Double quotes have been used around "Footer" only for test purposes.
-				?>
-			</div>
-
-			<div class="col-md-3">
-				<?php
-					// Display container and contents:
-					skin_container( NT_("Footer 3"), array(
-							// The following params will be used as defaults for widgets included in this container:
-						) );
-					// Note: Double quotes have been used around "Footer" only for test purposes.
-				?>
-			</div>
-
-			<div class="col-md-3">
-				<?php
-					// Display container and contents:
-					skin_container( NT_("Footer 4"), array(
-							// The following params will be used as defaults for widgets included in this container:
-						) );
-					// Note: Double quotes have been used around "Footer" only for test purposes.
-				?>
-			</div>
-
-			<div class="clearfix"></div>
-
-		</div>
-		<!-- End row Footer -->
-	</div>
-	<!-- End container footer -->
-
-	<div class="footer_copyright">
-		<div class="container">
 			<p class="copyright">
 				<?php
 					// Display footer text (text can be edited in Blog Settings):
