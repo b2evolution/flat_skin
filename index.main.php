@@ -42,76 +42,92 @@ siteskin_include( '_site_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
 ?>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
-		<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
-			<div class="PageTop">
-	<?php
-		// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
-		// Display container and contents:
-		skin_container( NT_('Page Top'), array(
-				// The following params will be used as defaults for widgets included in this container:
-				'block_start'         => '<div class="widget $wi_class$">',
-				'block_end'           => '</div>',
-				'block_display_title' => false,
-				'list_start'          => '<ul>',
-				'list_end'            => '</ul>',
-				'item_start'          => '<li>',
-				'item_end'            => '</li>',
-			) );
-		// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
-	?>
-			</div>
-		</div>
-		<div class="coll-xs-12 col-sm-12 col-md-8 col-md-pull-4">
-			<div class="pageHeader">
-	<?php
-		// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-		// Display container and contents:
-		skin_container( NT_('Header'), array(
-				// The following params will be used as defaults for widgets included in this container:
-				'block_start'       => '<div class="widget $wi_class$">',
-				'block_end'         => '</div>',
-				'block_title_start' => '<h1>',
-				'block_title_end'   => '</h1>',
-			) );
-		// ----------------------------- END OF "Header" CONTAINER -----------------------------
-	?>
-			</div>
-		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<ul class="nav nav-tabs">
-	<?php
-		// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-		// Display container and contents:
-		// Note: this container is designed to be a single <ul> list
-		skin_container( NT_('Menu'), array(
-				// The following params will be used as defaults for widgets included in this container:
-				'block_start'         => '',
-				'block_end'           => '',
-				'block_display_title' => false,
-				'list_start'          => '',
-				'list_end'            => '',
-				'item_start'          => '<li>',
-				'item_end'            => '</li>',
-				'item_selected_start' => '<li class="active">',
-				'item_selected_end'   => '</li>',
-				'item_title_before'   => '',
-				'item_title_after'    => '',
-			) );
-		// ----------------------------- END OF "Menu" CONTAINER -----------------------------
-	?>
-			</ul>
+	<header id="header">
+		<div class="container">
+
+			<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
+				<div class="PageTop">
+				<?php
+					// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
+					// Display container and contents:
+					skin_container( NT_('Page Top'), array(
+							// The following params will be used as defaults for widgets included in this container:
+							'block_start'         => '<div class="widget $wi_class$">',
+							'block_end'           => '</div>',
+							'block_display_title' => false,
+							'list_start'          => '<ul>',
+							'list_end'            => '</ul>',
+							'item_start'          => '<li>',
+							'item_end'            => '</li>',
+						) );
+					// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
+				?>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-8 col-md-pull-4">
+				<div class="pageHeader">
+					<?php
+						// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
+						// Display container and contents:
+						skin_container( NT_('Header'), array(
+								// The following params will be used as defaults for widgets included in this container:
+								'block_start'       => '<div class="widget $wi_class$">',
+								'block_end'         => '</div>',
+								'block_title_start' => '<h1>',
+								'block_title_end'   => '</h1>',
+							) );
+						// ----------------------------- END OF "Header" CONTAINER -----------------------------
+					?>
+				</div>
+			</div>
+
 		</div>
-	</div>
+		<!-- end container header -->
+	</header>
+	<!-- end header -->
+
+	<nav id="nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs">
+			<?php
+				// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+				// Display container and contents:
+				// Note: this container is designed to be a single <ul> list
+				skin_container( NT_('Menu'), array(
+						// The following params will be used as defaults for widgets included in this container:
+						'block_start'         => '',
+						'block_end'           => '',
+						'block_display_title' => false,
+						'list_start'          => '',
+						'list_end'            => '',
+						'item_start'          => '<li>',
+						'item_end'            => '</li>',
+						'item_selected_start' => '<li class="active">',
+						'item_selected_end'   => '</li>',
+						'item_title_before'   => '',
+						'item_title_after'    => '',
+					) );
+				// ----------------------------- END OF "Menu" CONTAINER -----------------------------
+			?>
+					</ul>
+				</div>
+			</div>
+			<!-- end row menu -->
+		</div>
+		<!-- end container nav -->
+	</nav>
 
 <!-- =================================== START OF MAIN AREA =================================== -->
-	<div class="row">
-		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-9' ); ?>"<?php
-				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
+<div class="container">
+	<!-- <div class="row"> -->
+		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?>"<?php
+				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;padding:0 0 0 30px;"' : '' ); ?>>
 
 	<?php
 	if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo', 'access_requires_login' ) ) )
@@ -357,7 +373,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	if( $Skin->get_setting( 'layout' ) != 'single_column' )
 	{
 	?>
-		<div class="col-md-3"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
+		<div class="col-md-4"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
 	<?php
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
 		// Display container contents:
@@ -395,75 +411,115 @@ siteskin_include( '_site_body_header.inc.php' );
 	?>
 		</div>
 	<?php } ?>
-	</div>
+	<!-- </div> -->
+
+</div>
+<!-- End Container Main Area -->
 
 
 <!-- =================================== START OF FOOTER =================================== -->
-	<div class="row">
-		<div class="col-md-12 center">
-	<?php
-		// Display container and contents:
-		skin_container( NT_("Footer"), array(
-				// The following params will be used as defaults for widgets included in this container:
-			) );
-		// Note: Double quotes have been used around "Footer" only for test purposes.
-	?>
-	<p>
-		<?php
-			// Display footer text (text can be edited in Blog Settings):
-			$Blog->footer_text( array(
-					'before'      => '',
-					'after'       => ' &bull; ',
-				) );
+<footer id="footer">
+	<div class="container">
+		<!-- <div class="row"> -->
+				<?php
+					// Display container and contents:
+					skin_container( NT_("Sidebar 2"), array(
+							'block_start' => '<div class="col-md-3 evo_widget widget $wi_class$">',
+							'block_end'  => '</div>',
+							'item_start' => '<li>',
+							'item_end' => '</li>',
+							// The following params will be used as defaults for widgets included in this container:
+						) );
+					// Note: Double quotes have been used around "Footer" only for test purposes.
+				?>
+			<div class="clearfix"></div>
 
-		// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
-		?>
+		<!-- </div> -->
+		<!-- End row Footer -->
+	</div>
+	<!-- End container footer -->
 
-		<?php
-			// Display a link to contact the owner of this blog (if owner accepts messages):
-			$Blog->contact_link( array(
-					'before'      => '',
-					'after'       => ' &bull; ',
-					'text'   => T_('Contact'),
-					'title'  => T_('Send a message to the owner of this blog...'),
-				) );
-			// Display a link to help page:
-			$Blog->help_link( array(
-					'before'      => ' ',
-					'after'       => ' ',
-					'text'        => T_('Help'),
-				) );
-		?>
+	<div class="footer_copyright">
+		<div class="container">
 
-		<?php
-			// Display additional credits:
-			// If you can add your own credits without removing the defaults, you'll be very cool :))
-			// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
-			credits( array(
-					'list_start'  => '&bull;',
-					'list_end'    => ' ',
-					'separator'   => '&bull;',
-					'item_start'  => ' ',
-					'item_end'    => ' ',
-				) );
-		?>
-	</p>
+			<div class="col-md-12 center">
+				<?php
+					// Display container and contents:
+					skin_container( NT_("Footer"), array(
+							// The following params will be used as defaults for widgets included in this container:
+						) );
+					// Note: Double quotes have been used around "Footer" only for test purposes.
+				?>
+			</div>
 
-	<?php
-		// Please help us promote b2evolution and leave this logo on your blog:
-		powered_by( array(
-				'block_start' => '<div class="powered_by">',
-				'block_end'   => '</div>',
-				// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
-				'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
-				'img_width'   => 120,
-				'img_height'  => 32,
-			) );
-	?>
+			<p class="copyright">
+				<?php
+					// Display footer text (text can be edited in Blog Settings):
+					$Blog->footer_text( array(
+							'before'      => '',
+							'after'       => ' &bull; ',
+						) );
+
+				// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
+				?>
+			</p>
+			<div class="footer_menu_copyright">
+				<?php
+					// Display a link to contact the owner of this blog (if owner accepts messages):
+					$Blog->contact_link( array(
+							'before'      => '',
+							'after'       => ' &bull; ',
+							'text'   => T_('Contact'),
+							'title'  => T_('Send a message to the owner of this blog...'),
+						) );
+					// Display a link to help page:
+					$Blog->help_link( array(
+							'before'      => ' ',
+							'after'       => ' ',
+							'text'        => T_('Help'),
+						) );
+				?>
+
+				<?php
+					// Display additional credits:
+					// If you can add your own credits without removing the defaults, you'll be very cool :))
+					// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
+					credits( array(
+							'list_start'  => '&bull;',
+							'list_end'    => ' ',
+							'separator'   => '&bull;',
+							'item_start'  => ' ',
+							'item_end'    => ' ',
+						) );
+				?>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<?php
+				// Please help us promote b2evolution and leave this logo on your blog:
+				powered_by( array(
+						'block_start' => '<div class="powered_by">',
+						'block_end'   => '</div>',
+						// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
+						'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
+						'img_width'   => 120,
+						'img_height'  => 32,
+					) );
+			?>
 
 		</div>
+		<!-- end container powered_by -->
 	</div>
+	<!-- End footer_copyright -->
+
+</footer>
+<!-- end Footer -->
+
+	</div>
+	<!-- End Row Body -->
 </div>
+<!-- End Container fluid-->
 
 <?php
 // ---------------------------- SITE FOOTER INCLUDED HERE ----------------------------

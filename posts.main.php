@@ -47,44 +47,44 @@ siteskin_include( '_site_body_header.inc.php' );
 
 	<header id="header">
 		<div class="container">
-			<div class="row">
-				<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
-					<div class="PageTop">
-			<?php
-				// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
-				// Display container and contents:
-				skin_container( NT_('Page Top'), array(
-						// The following params will be used as defaults for widgets included in this container:
-						'block_start'         => '<div class="widget $wi_class$">',
-						'block_end'           => '</div>',
-						'block_display_title' => false,
-						'list_start'          => '<ul>',
-						'list_end'            => '</ul>',
-						'item_start'          => '<li>',
-						'item_end'            => '</li>',
-					) );
-				// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
-			?>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-8 col-md-pull-4">
-					<div class="pageHeader">
-			<?php
-				// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-				// Display container and contents:
-				skin_container( NT_('Header'), array(
-						// The following params will be used as defaults for widgets included in this container:
-						'block_start'       => '<div class="widget $wi_class$">',
-						'block_end'         => '</div>',
-						'block_title_start' => '<h1>',
-						'block_title_end'   => '</h1>',
-					) );
-				// ----------------------------- END OF "Header" CONTAINER -----------------------------
-			?>
-					</div>
+
+			<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
+				<div class="PageTop">
+				<?php
+					// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
+					// Display container and contents:
+					skin_container( NT_('Page Top'), array(
+							// The following params will be used as defaults for widgets included in this container:
+							'block_start'         => '<div class="widget $wi_class$">',
+							'block_end'           => '</div>',
+							'block_display_title' => false,
+							'list_start'          => '<ul>',
+							'list_end'            => '</ul>',
+							'item_start'          => '<li>',
+							'item_end'            => '</li>',
+						) );
+					// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
+				?>
 				</div>
 			</div>
-			<!-- End row pagetop -->
+
+			<div class="col-xs-12 col-sm-12 col-md-8 col-md-pull-4">
+				<div class="pageHeader">
+					<?php
+						// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
+						// Display container and contents:
+						skin_container( NT_('Header'), array(
+								// The following params will be used as defaults for widgets included in this container:
+								'block_start'       => '<div class="widget $wi_class$">',
+								'block_end'         => '</div>',
+								'block_title_start' => '<h1>',
+								'block_title_end'   => '</h1>',
+							) );
+						// ----------------------------- END OF "Header" CONTAINER -----------------------------
+					?>
+				</div>
+			</div>
+
 		</div>
 		<!-- end container header -->
 	</header>
@@ -124,10 +124,11 @@ siteskin_include( '_site_body_header.inc.php' );
 	</nav>
 
 <!-- =================================== START OF MAIN AREA =================================== -->
+
 <div class="container">
-	<div class="row">
-		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?>"<?php
-				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
+	<!-- <div class="row"> -->
+		<div id="main_area" class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?> " <?php
+				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;padding:0 0 0 30px;"' : '' ); ?>>
 
 	<?php
 	if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo', 'access_requires_login' ) ) )
@@ -373,7 +374,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	if( $Skin->get_setting( 'layout' ) != 'single_column' )
 	{
 	?>
-		<div class="col-md-4"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
+		<div id="main_sidebar" class="col-md-4"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;border-left:none;border-right:1px solid #EBEBEB"' : '' ); ?>>
 	<?php
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
 		// Display container contents:
@@ -411,7 +412,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	?>
 		</div>
 	<?php } ?>
-	</div>
+	<!-- </div> -->
 
 </div>
 <!-- End Container Main Area -->
@@ -420,7 +421,7 @@ siteskin_include( '_site_body_header.inc.php' );
 <!-- =================================== START OF FOOTER =================================== -->
 <footer id="footer">
 	<div class="container">
-		<div class="row">
+		<!-- <div class="row"> -->
 				<?php
 					// Display container and contents:
 					skin_container( NT_("Sidebar 2"), array(
@@ -434,7 +435,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				?>
 			<div class="clearfix"></div>
 
-		</div>
+		<!-- </div> -->
 		<!-- End row Footer -->
 	</div>
 	<!-- End container footer -->
