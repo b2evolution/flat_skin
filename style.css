@@ -17,7 +17,10 @@ body {
   background-color: #F2F2F2;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  font-weight: 300; }
+  font-weight: 300;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 /**
  * 1.0 HEADER STRUCTURE
@@ -388,14 +391,52 @@ footer#footer {
   background-color: #34495E;
   color: #CDCDCD;
   padding: 35px 0 0; }
+  footer#footer .col-md-3:nth-child(5),
+  footer#footer .col-md-3:nth-child(9),
+  footer#footer .col-md-3:nth-child(13),
+  footer#footer .col-md-3:nth-child(17) {
+    clear: both; }
   footer#footer .evo_widget.widget {
-    padding: 0px 10px 30px 10px; }
+    padding: 0px 10px 25px 10px; }
     footer#footer .evo_widget.widget h3 {
-      color: #ffffff;
-      color: #FDFDFD;
+      color: #F2F2F2;
       font-weight: 300;
       font-size: 25px;
       margin: 20px 0; }
+    footer#footer .evo_widget.widget ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+      footer#footer .evo_widget.widget ul li {
+        margin: 5px 0; }
+        footer#footer .evo_widget.widget ul li a {
+          color: #E7E7E7;
+          font-size: 16px; }
+        footer#footer .evo_widget.widget ul li > a {
+          color: #E7E7E7;
+          font-size: 16px;
+          padding-left: 12px;
+          display: inline-block;
+          letter-spacing: 0.1px;
+          -moz-transition: all 0.32s ease;
+          -webkit-transition: all 0.32s ease;
+          -o-transition: all 0.32s ease;
+          transition: all 0.32s ease;
+          position: relative; }
+          footer#footer .evo_widget.widget ul li > a::before {
+            content: "\f105";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: "FontAwesome";
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0); }
+          footer#footer .evo_widget.widget ul li > a:hover {
+            text-decoration: none;
+            color: #FFFFFF; }
     footer#footer .evo_widget.widget.widget_core_coll_post_list ul {
       list-style-type: none;
       padding: 0;
@@ -404,8 +445,6 @@ footer#footer {
         display: block;
         margin: 5px 0;
         clear: both; }
-        footer#footer .evo_widget.widget.widget_core_coll_post_list ul li a {
-          color: #E7E7E7; }
         footer#footer .evo_widget.widget.widget_core_coll_post_list ul li .item_title {
           float: right;
           width: 65%; }
@@ -414,14 +453,17 @@ footer#footer {
             font-size: 15px;
             line-height: 1.2;
             display: inline-block; }
+            footer#footer .evo_widget.widget.widget_core_coll_post_list ul li .item_title a:hover {
+              color: #ccc; }
         footer#footer .evo_widget.widget.widget_core_coll_post_list ul li .item_images {
-          float: left; }
+          float: left;
+          padding: 0 0 10px; }
     footer#footer .evo_widget.widget .tag_cloud a {
       display: inline-block;
       font-size: 15px !important;
       font-weight: 300;
       text-transform: capitalize;
-      color: #1B1B1B;
+      color: #333333;
       background-color: #FFFFFF;
       padding: 8px 12px;
       border-radius: 5px;
@@ -430,10 +472,27 @@ footer#footer {
       -webkit-transition: all 0.32s ease;
       -o-transition: all 0.32s ease;
       transition: all 0.32s ease; }
-      footer#footer .evo_widget.widget .tag_cloud a:hover {
+      footer#footer .evo_widget.widget .tag_cloud a:hover, footer#footer .evo_widget.widget .tag_cloud a:focus {
         text-decoration: none;
         background-color: #2983C3;
         color: #fff; }
+    footer#footer .evo_widget.widget.widget_core_coll_search_form .compact_search_form input.search_field {
+      width: 78%;
+      border-radius: 3px 0 0 3px;
+      height: 36px; }
+    footer#footer .evo_widget.widget.widget_core_coll_search_form .compact_search_form input.search_submit {
+      margin: 0;
+      padding: 6px 18px;
+      border-radius: 0 3px 4px 0;
+      border: none;
+      vertical-align: middle;
+      height: 36px;
+      margin-top: -2px;
+      border: none;
+      outline: none; }
+      footer#footer .evo_widget.widget.widget_core_coll_search_form .compact_search_form input.search_submit:hover {
+        background-color: #1784E2;
+        border-color: #1784E2; }
   footer#footer .footer_copyright {
     padding: 20px 0px 15px 0px;
     background-color: #2C3E50;

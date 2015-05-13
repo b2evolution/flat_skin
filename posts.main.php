@@ -425,7 +425,9 @@ siteskin_include( '_site_body_header.inc.php' );
 					// Display container and contents:
 					skin_container( NT_("Sidebar 2"), array(
 							'block_start' => '<div class="col-md-3 evo_widget widget $wi_class$">',
-							'block_end'  => '</div>'
+							'block_end'  => '</div>',
+							'item_start' => '<li>',
+							'item_end' => '</li>',
 							// The following params will be used as defaults for widgets included in this container:
 						) );
 					// Note: Double quotes have been used around "Footer" only for test purposes.
