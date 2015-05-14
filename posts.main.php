@@ -369,7 +369,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	if( $Skin->get_setting( 'layout' ) != 'single_column' )
 	{
 	?>
-		<div id="main_sidebar" class="col-md-4"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;border-left:none;border-right:1px solid #EBEBEB"' : '' ); ?>>
+		<div id="main_sidebar" class="col-md-4"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;border-left:none;"' : '' ); ?>>
 	<?php
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
 		// Display container contents:
@@ -516,6 +516,10 @@ siteskin_include( '_site_body_header.inc.php' );
 	<!-- End Row Body -->
 </div>
 <!-- End Container fluid-->
+
+<!-- JS Include -->
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/main.js"></script>
 
 <?php
 // ---------------------------- SITE FOOTER INCLUDED HERE ----------------------------
