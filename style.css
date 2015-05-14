@@ -991,7 +991,7 @@ footer#footer .footer_copyright .footer_menu_copyright a:hover {
 footer#footer .footer_copyright .powered_by {
   margin: 0;
 }
-body div.sitewide_footer {
+body .sitewide_footer {
   background-color: #2C3E50;
   box-shadow: none;
   border-top: none;
