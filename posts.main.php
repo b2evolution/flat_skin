@@ -385,7 +385,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				'block_end' => '</div>',
 				// This will enclose the title of each widget:
 				'block_title_start' => '<div class="panel-heading"><h4 class="panel-title">',
-				'block_title_end' => '</h4></div>',
+				'block_title_end' => '</h4><div class="clearfix"></div></div>',
 				// This will enclose the body of each widget:
 				'block_body_start' => '<div class="panel-body">',
 				'block_body_end' => '</div>',
