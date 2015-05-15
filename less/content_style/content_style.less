@@ -1,5 +1,5 @@
 #main_area{
-  padding: 30px 30px 30px 15px;
+  padding: 30px;
   background-color: #FFFFFF;
   margin-top: 15px;
   box-shadow: 1px 1px 1px #E8E8E8;
@@ -22,4 +22,140 @@
   .evo_widget.widget{
 
   }
+
+  .pagination{
+
+    li{
+
+      & > span, & > a{
+        background-color: #34495E;
+        border: 1px solid #34495E;
+        padding: 6px 15px;
+        margin: 0 2px;
+        border-radius: 3px;
+        color: #fff;
+
+        &:hover{
+          background-color: #2ECC71;
+          border-color: #2ECC71;
+          cursor: pointer;
+        }
+
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // POSTS
+
+
+  a{
+    color: #6d7683;
+
+    &:hover{
+      color: #2ECC71;
+      text-decoration: none;
+    }
+  }
+
+  .bPost{
+
+    h2{
+      margin: 20px 0 6px;
+
+      a{
+        text-transform: capitalize;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+    }
+
+    .small.text-muted{
+      text-transform: uppercase;
+      font-size: 12px;
+      margin: 0 0 15px;
+
+      a{
+
+        span.fa-external-link{
+          &::before{
+            content: '';
+          }
+        }
+      }
+    }
+
+    .content_full{
+
+      .bImages{
+        padding: 10px 0 20px;
+
+        .iamge_block{
+
+        }
+      }
+
+      .bText{
+        letter-spacing: 1px;
+        padding-bottom: 5px;
+        font-size: 15px;
+        color: #5E6064;
+        line-height: 22px;
+
+        p{
+          letter-spacing: 1px;
+          padding-bottom: 5px;
+          font-size: 15px;
+          color: #5E6064;
+          line-height: 22px;
+
+          &.bMore{
+            margin: 20px 0 10px;
+
+            a{
+              background-color: #6d7683;
+              color: #ffffff;
+              border-radius: 2px;
+              padding: 10px 15px;
+              font-size: 13px;
+              letter-spacing: 0.6px;
+              text-transform: uppercase;
+
+
+              &:hover{
+                background-color: #2ECC71;
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+    .small.tag_content{
+
+    }
+
+    .small.comment_content{
+
+    }
+
+  }
+
+
+  ////////////////////////////////////////////////////////////////
+  // SINGLE POSTS
+
+  .bPost_disp_single{
+
+    .content_full{
+
+      .bText{
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+
+
 }
