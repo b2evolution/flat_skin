@@ -122,8 +122,11 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <div class="container">
 	<!-- <div class="row"> -->
-		<div id="main_area" class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?> " <?php
-				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;padding:0 0 0 30px;"' : '' ); ?>>
+		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?> " <?php
+				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
+
+			<!-- Open Main area Section -->
+			<div id="main_area" >
 
 	<?php
 	if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo', 'access_requires_login' ) ) )
@@ -189,13 +192,13 @@ siteskin_include( '_site_body_header.inc.php' );
 	if( $disp != 'front' && $disp != 'download' && $disp != 'search' )
 	{
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-		mainlist_page_links( array(
-				'block_start' => '<div class="center"><ul class="pagination">',
-				'block_end' => '</ul></div>',
-				'page_current_template' => '<span><b>$page_num$</b></span>',
-				'page_item_before' => '<li>',
-				'page_item_after' => '</li>',
-			) );
+		// mainlist_page_links( array(
+		// 		'block_start' => '<div class="center"><ul class="pagination">',
+		// 		'block_end' => '</ul></div>',
+		// 		'page_current_template' => '<span><b>$page_num$</b></span>',
+		// 		'page_item_before' => '<li>',
+		// 		'page_item_after' => '</li>',
+		// 	) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	?>
 
@@ -362,6 +365,10 @@ siteskin_include( '_site_body_header.inc.php' );
 		// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
 	?>
 	</div>
+	<!-- End #main_area -->
+
+	</div>
+	<!-- End col-md-8 -->
 
 
 <!-- =================================== START OF SIDEBAR =================================== -->

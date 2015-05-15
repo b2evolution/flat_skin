@@ -26,7 +26,7 @@ $params = array_merge( array(
 		'author_link_text' => 'preferredname',
 	), $params );
 
-echo '<div id="styled_content_block">'; // Beginning of post display
+echo '<div class="styled_content_block">'; // Beginning of post display
 ?>
 
 <div id="<?php $Item->anchor_id() ?>" class="<?php $Item->div_classes( $params ) ?>" lang="<?php $Item->lang() ?>">
@@ -70,7 +70,7 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 		}
 		// Permalink:
 		$Item->permanent_link( array(
-				'text' => '#icon#',
+				'text' => '',
 			) );
 
 		// We want to display the post time:
@@ -82,7 +82,7 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 
 		// Author
 		$Item->author( array(
-			'before'    => ' '.T_('by').' ',
+			'before'    => ' '.T_('| by').' ',
 			'after'     => ' ',
 			'link_text' => $params['author_link_text'],
 		) );
@@ -99,7 +99,8 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 
 		// Link for editing
 		$Item->edit_link( array(
-			'before'    => ' &bull; ',
+			// 'before'    => ' &bull; ',
+			'before'    => ' | ',
 			'after'     => '',
 		) );
 	?>
@@ -119,13 +120,13 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 	<?php
 		// List all tags attached to this post:
 		$Item->tags( array(
-				'before'    => '<div class="small">'.T_('Tags').': ',
+				'before'    => '<div class="small tag_content">'.T_('Tags').': ',
 				'after'     => '</div>',
 				'separator' => ', ',
 			) );
 	?>
 
-	<div class="small">
+	<div class="small comment_content">
 		<?php
 			// Link to comments, trackbacks, etc.:
 			$Item->feedback_link( array(
