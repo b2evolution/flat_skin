@@ -46,8 +46,6 @@
       }
     }
 
-    .panel-body{
-
       ul{
         list-style-type: none;
         margin: 0;
@@ -56,7 +54,7 @@
         li{
           display: block;
           margin: 0;
-          padding: 6px 0;
+          padding: 12px 10px;
 
           &::before,
           &::after{
@@ -92,7 +90,7 @@
           }
         }
       }
-    }
+
 
     ////////////////////////////////////////////////////////////////
     // WIDGET SIDEBAR STYLE
@@ -265,6 +263,29 @@
               }
             }
 
+            .item_first_image{
+              clear: both;
+              margin-left: -10px;
+
+              a{
+                padding: 0;
+                float: left;
+                display: inline-block;
+                // padding-right: 10px;
+                margin: 0;
+
+                img{
+                  width: 80px;
+                  min-height: 0;
+                  height: auto;
+                }
+
+                &::before{
+                  display: none;
+                }
+              }
+            }
+
             .item_title{
               // position: absolute;
               float: right;
@@ -295,6 +316,7 @@
                 img{
                   width: 80px;
                   height: auto;
+                  min-height: 0;
                 }
               }
             }
@@ -420,7 +442,12 @@
             .item_images{
               margin: 0;
               float: left;
-              width: 80px;
+
+              img{
+                width: 80px;
+                height: auto;
+                min-height: 0;
+              }
 
               a{
                 padding: 0;
@@ -440,6 +467,12 @@
                 // padding-right: 10px;
                 margin: 0;
 
+                img{
+                  width: 80px;
+                  min-height: 0;
+                  height: auto;
+                }
+
                 &::before{
                   display: none;
                 }
@@ -456,9 +489,9 @@
               position: inherit;
 
               a{
-                font-size: 18px;
-                font-weight: 400;
-                line-height: 20px;
+                // font-size: 18px;
+                // font-weight: 400;
+                // line-height: 20px;
               }
             }
 
@@ -479,8 +512,15 @@
                 }
               }
             }
-          }
 
+            .item_excerpt{
+              font-size: 13px;
+              color: #505C69;
+              clear: both;
+              padding-top: 15px;
+            }
+
+          }
         }
       }
     }
@@ -657,6 +697,7 @@
         li{
           font-size: 15px;
           border-bottom: 1px solid #ecedee;
+          padding: 12px 0;
 
           a{
             font-size: 15px;
@@ -668,6 +709,99 @@
         padding-top: 10px;
       }
     }
+
+    &.widget_plugin_evo_Calr{
+      padding: 30px;
+
+      table.bCalendarTable{
+        width: 100%;
+
+        caption{
+          font-size: 18px;
+          text-align: center;
+          background-color: #34495E;
+          padding: 10px 0;
+          // margin-bottom: 15px;
+
+          a{
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #fff;
+          }
+        }
+
+        .bCalendarRow{
+
+          th{
+            font-size: 13px;
+            text-align: center;
+            border-right: 1px solid rgba(192, 192, 192, 0.1);
+            border-right: 1px solid rgba(192, 192, 192, 0.1);
+            padding: 10px 0;
+
+            &:first-child{
+              border-left: 1px solid rgba(192, 192, 192, 0.1);
+            }
+          }
+
+          td{
+            padding: 6px 5px;
+          }
+        }
+
+        tbody{
+          tr{
+            td{
+              font-size: 13px;
+              border-right: 1px solid rgba(192, 192, 192, 0.1);
+              border-bottom: 1px solid rgba(192, 192, 192, 0.1);
+
+              &:first-child{
+                border-left: 1px solid rgba(192, 192, 192, 0.1);
+              }
+            }
+          }
+        }
+
+        #bCalendarToday{
+          background-color: #34495E;
+          color: #fff;
+          border: none;
+          font-weight: 600;
+        }
+
+        tfoot{
+          background-color: #34495E;
+
+          tr{
+            td{
+              padding: 10px;
+
+              a{
+                color: #fff;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    &.widget_plugin_evo_facebook{
+      text-align: center;
+      padding: 30px;
+    }
+
+    &.widget_plugin_evo_Arch{
+      ul{
+        list-style-type: none;
+
+        li{
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+
 
   }
 }
