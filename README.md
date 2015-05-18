@@ -2,6 +2,15 @@
 
 Awesome Flat Blog Skin
 
+### Feauture
+
+- FLat Design
+- Smoot scroll
+- Preloader
+- Responsive
+- Support Style All widget
+- Full Width, Sidebar left, Sidebar Right, Widget Footer 4 Column, Widget Footer 1 Column
+- Etc.
 
 ### Front Page
 
