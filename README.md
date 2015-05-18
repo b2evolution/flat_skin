@@ -2,9 +2,9 @@
 
 Awesome Flat Blog Skin
 
-### Feauture
+### Feature
 
-- FLat Design
+- Flat Design
 - Smoot scroll
 - Preloader
 - Responsive
