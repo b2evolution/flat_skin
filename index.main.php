@@ -40,7 +40,7 @@ siteskin_include( '_site_body_header.inc.php' );
 <div class="container-fluid">
 	<div class="row">
 
-	<header id="header">
+	<header id="header" >
 		<div class="container">
 
 			<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
@@ -138,19 +138,6 @@ siteskin_include( '_site_body_header.inc.php' );
 			) );
 		// --------------------------------- END OF MESSAGES ---------------------------------
 	}
-	?>
-
-	<?php
-		// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
-		item_prevnext_links( array(
-				'block_start' => '<ul class="pager">',
-				'prev_start'  => '<li class="previous">',
-				'prev_end'    => '</li>',
-				'next_start'  => '<li class="next">',
-				'next_end'    => '</li>',
-				'block_end'   => '</ul>',
-			) );
-		// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
 	?>
 
 	<?php
@@ -364,6 +351,20 @@ siteskin_include( '_site_body_header.inc.php' );
 		// copying the matching php file into your skin directory.
 		// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
 	?>
+
+	<?php
+		// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
+		item_prevnext_links( array(
+				'block_start' => '<ul class="pager">',
+				'prev_start'  => '<li class="previous">',
+				'prev_end'    => '</li>',
+				'next_start'  => '<li class="next">',
+				'next_end'    => '</li>',
+				'block_end'   => '</ul>',
+			) );
+		// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
+	?>
+
 	</div>
 	<!-- End #main_area -->
 
@@ -523,10 +524,6 @@ siteskin_include( '_site_body_header.inc.php' );
 	<!-- End Row Body -->
 </div>
 <!-- End Container fluid-->
-
-<!-- JS Include -->
-<script src="js/jquery.nicescroll.min.js"></script>
-<script src="js/main.js"></script>
 
 <?php
 // ---------------------------- SITE FOOTER INCLUDED HERE ----------------------------

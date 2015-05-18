@@ -170,6 +170,7 @@ footer#footer{
       }
     }
 
+    // Widget Categpry List
     &.widget_core_coll_category_list{
       ul{
         li{
@@ -186,6 +187,7 @@ footer#footer{
       }
     }
 
+    // Widget Common Links list
     &.widget_core_coll_common_links{
 
       ul{
@@ -227,49 +229,7 @@ footer#footer{
     }
 
 
-    &.widget_core_coll_post_list{
-      // margin-bottom: 40px;
-
-      ul{
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-
-        li{
-          display: block;
-          margin: 5px 0;
-          // padding: 10px 0;
-          clear: both;
-
-          .item_title{
-            float: right;
-            width: 65%;
-
-            a{
-              color: #E7E7E7;
-              font-size: 15px;
-              line-height: 1.2;
-              display: inline-block;
-              -moz-transition: all 0.32s ease;
-              -webkit-transition: all 0.32s ease;
-              -o-transition: all 0.32s ease;
-              transition: all 0.32s ease;
-
-              &:hover{
-                text-decoration: none;
-                color: #fff;
-              }
-            }
-          }
-
-          .item_images{
-            float: left;
-            padding: 0 0 10px;
-          }
-        }
-      }
-    }
-
+    // Widget Comment List
     &.widget_core_coll_comment_list{
 
       ul{
@@ -303,6 +263,8 @@ footer#footer{
       }
     }
 
+
+  // Widget colls list public
     &.widget_core_colls_list_public{
 
       ul{
@@ -319,6 +281,7 @@ footer#footer{
       }
     }
 
+    // Widget list content hierachy
     &.widget_core_content_hierarchy{
       ul{
         ul{
@@ -364,6 +327,7 @@ footer#footer{
       }
     }
 
+    // Widget Use Tools
     &.widget_core_user_tools{
       ul{
         a{
@@ -399,6 +363,51 @@ footer#footer{
       }
     }
 
+    // Widget Page List
+    &.widget_core_coll_page_list,
+    &.widget_core_coll_related_post_list,
+    &.widget_core_coll_post_list,
+    &.widget_core_coll_item_list{
+      ul{
+        li{
+          clear: both;
+
+          &::before, &::after{
+            content: '';
+            display: table;
+            clear: both;
+          }
+
+          // Style Image standart
+          .item_title{
+            float: right;
+            width: 62%;
+
+            a:hover{
+              color: #2CC05A;
+            }
+          }
+          .item_images{
+            float: left;
+          }
+
+          // Style Image first item_images
+          .item_first_image{
+            float: left;
+            padding-right: 15px;
+
+            & + .item_title{
+              float: none;
+              // width: 100%;
+              width: auto;
+            }
+          }
+
+        }
+      }
+    }
+
+    // Widget List Owner
     &.widget_core_colls_list_owner{
       ul{
         li{
@@ -472,7 +481,7 @@ footer#footer{
               border: none;
               font-weight: 300;
               color: #CDCDCD;
-              font-size: 13px;
+              font-size: 14px;
               padding: 12px 0 10px;
               margin-bottom: 10px;
               border-bottom: 1px solid #40576E;
