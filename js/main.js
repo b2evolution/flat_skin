@@ -1,4 +1,10 @@
-(function($) { "use strict";
+jQuery(window).load(function() {
+  $('.preloader').fadeOut(300);
+  $('.img-preloader').fadeOut(500);
+});
+
+
+jQuery(document).ready(function($) {
 
   jQuery("html").niceScroll({
     scrollspeed: 60,
@@ -13,4 +19,4 @@
     cursorborderradius: 0,
   });
 
-})(jQuery);
+});
