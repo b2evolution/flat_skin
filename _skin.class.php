@@ -17,6 +17,14 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
  */
 class flat_Skin extends Skin
 {
+
+	/**
+	 * Do we want to use style.min.css instead of style.css ?
+	 */
+	var $use_min_css = 'check';  // true|false|'check' Set this to true for better optimization
+	// Note: we leave this on "check" in the bootstrap_blog_skin so it's easier for beginners to just delete the .min.css file
+	// But for best performance, you should set it to true.
+
   /**
 	 * Get default name for the skin.
 	 * Note: the admin can customize it.
@@ -35,6 +43,16 @@ class flat_Skin extends Skin
 		return 'normal';
 	}
 
+	/**
+	 * What evoSkins API does has this skin been designed with?
+	 *
+	 * This determines where we get the fallback templates from (skins_fallback_v*)
+	 * (allows to use new markup in new b2evolution versions)
+	 */
+	function get_api_version()
+	{
+		return 6;
+	}
 
 	/**
    * Get definitions for editable params

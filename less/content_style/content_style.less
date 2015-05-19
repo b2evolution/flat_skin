@@ -81,6 +81,12 @@
         font-weight: 600;
         letter-spacing: 1px;
         color: #565C64;
+        transition: all 0.32s ease;
+
+        &:hover{
+          color: #4ED387;
+          text-decoration: none;
+        }
       }
     }
 
@@ -99,7 +105,8 @@
       }
     }
 
-    .content_full{
+    .content_full,
+    .evo_post__full{
 
       .bImages{
         padding: 10px 0 20px;
@@ -109,7 +116,8 @@
         }
       }
 
-      .bText{
+      .bText,
+      .evo_post__full_text{
         letter-spacing: 1px;
         padding-bottom: 5px;
         font-size: 15px;
@@ -123,7 +131,7 @@
           color: #5E6064;
           line-height: 22px;
 
-          &.bMore{
+          &.bMore, &.evo_post_more_link{
             margin: 20px 0 10px;
 
             a{
@@ -158,37 +166,47 @@
 
 
   ////////////////////////////////////////////////////////////////
-  // SINGLE POSTS
+  // COMMENT POSTS
 
-  .bPost_disp_single{
+  .bPost{
 
-    .content_full{
+    .content_full, .evo_post__full{
 
-      .bText{
+      .bText, .evo_post__full_text{
         padding-bottom: 15px;
       }
     }
 
     .evoComment.panel{
       border-color: #ECEDEE;
+      margin-top: 20px;
 
       .panel-heading{
         border-color: #ECEDEE;
-        
+
         .evoComment-title{
           letter-spacing: 1px;
-          font-size: 15px;
+          font-size: 13px;
           line-height: 22px;
           text-transform: uppercase;
+
+          a{
+            &:hover{
+              background-color: transparent;
+            }
+          }
         }
 
       }
 
       .panel-body{
+        padding: 20px;
+
         .evoComment-avatar{
           float: left;
           padding-right: 15px;
           padding-bottom: 15px;
+
           a{
             img{
               border-radius: 100%;
@@ -198,14 +216,42 @@
         }
 
         .evoComment-text{
+          margin-top: 5px;
           overflow: hidden;
           display: block;
 
           p{
             letter-spacing: 1px;
-            font-size: 15px;
+            font-size: 14px;
             color: #5E6064;
-            line-height: 22px;
+            line-height: 18px;
+          }
+        }
+
+        .evoComment-info{
+          margin-top: 5px;
+
+          small{
+            a{
+              background-color: #F5F5F5;
+              padding: 5px 10px;
+              border-radius: 3px;
+              color: #333;
+              font-size: 12px;
+              transition: all 0.32s ease;
+
+              &:hover{
+                background-color: #E7E7E7;
+
+                span.fa{
+                }
+              }
+
+
+              &.permalink_right{
+                margin-left: 5px;
+              }
+            }
           }
         }
       }
@@ -227,17 +273,13 @@
           color: #565C64;
         }
       }
-      .bComment{
-
-
-        .form-group{
-          .control-label{
-            text-align: left;
-          }
-        }
-      }
 
       .form-group{
+        margin: 0 0 15px;
+
+        .control-label{
+          text-align: left;
+        }
 
         input.bComment,
         textarea.bComment{
@@ -263,8 +305,22 @@
             border-color: transparent;
           }
         }
+
+        #uploadfile_A1{
+          display: inline-block;
+        }
       }
 
+      .control-buttons{
+        margin-top: 15px;
+      }
+
+      .btn{
+        &:focus{
+          outline: none;
+          box-shadow: none;
+        }
+      }
 
       .submit.SaveButton{
         background-color: #34495E;
@@ -273,16 +329,22 @@
         -o-transition: all 0.32s ease;
         transition: all 0.32s ease;
 
-        &:hover{
+        &:hover, &:active, &:focus{
           background-color: #2ECC71;
           border-color: #2ECC71;
+          box-shadow: none;
+          outline: none;
         }
       }
     }
 
     .comment_notification,
-    .feedback_feed_msg{
+    .feedback_feed_msg,
+    .evo_post_comment_notification,
+    .evo_post_feedback_feed_msg{
+      text-align: center;
       font-size: 13px;
+
       a{
         font-size: 13px;
       }
@@ -314,7 +376,6 @@
         padding: 10px 25px;
         border: none;
         background-color: #f2f2f2;
-
       }
 
       &.previous{

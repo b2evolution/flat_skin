@@ -27,7 +27,9 @@ skin_init( $disp );
 
 
 // -------------------------- HTML HEADER INCLUDED HERE --------------------------
-skin_include( '_html_header.inc.php', array() );
+skin_include( '_html_header.inc.php', array(
+	'Viewport_tag'  =>  '# responsif #'
+) );
 // -------------------------------- END OF HEADER --------------------------------
 
 
@@ -36,6 +38,12 @@ skin_include( '_html_header.inc.php', array() );
 siteskin_include( '_site_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
 ?>
+
+<!-- Add Preloader -->
+<div class="preloader">
+	<span class="img-preload"></span>
+</div>
+<!-- End Preloader -->
 
 <div class="container-fluid">
 	<div class="row">
@@ -524,6 +532,10 @@ siteskin_include( '_site_body_header.inc.php' );
 	<!-- End Row Body -->
 </div>
 <!-- End Container fluid-->
+
+<!-- JS Include -->
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/main.js"></script>
 
 <?php
 // ---------------------------- SITE FOOTER INCLUDED HERE ----------------------------

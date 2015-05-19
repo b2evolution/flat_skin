@@ -9,23 +9,37 @@
 
 /*---------------  End of Themes Info  ---------------*/
 
-
 /**
- * 1.0 HEAD STRUCTURE
+ * 1.0 BASIC STRUCTURE
  * -----------------------------------------------------------------------------
  */
-.pageHeader {
-	margin-bottom: 20px;
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,500,700,900);
+
+body{
+  background-color: #F2F2F2;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.PageTop {
-	margin-top: 20px;
-	.widget--social-media-links {
-		text-align: right;
-	}
+
+a{
+  // transition: all 0.32s ease;
+
+  &:hover{
+    text-decoration: none;
+  }
 }
-.nav.nav-tabs {
-	margin-top: 0;
-}
+
+
+/**
+ * 1.0 OTHER STRUCTURE
+ * -----------------------------------------------------------------------------
+ */
 
 // Login widget form
 .widget_core_user_login {
@@ -423,18 +437,13 @@ div.bSideItem {
 	margin-top: 0;
 }
 
-// Pagination
-.pagination {
-	margin: 0;
-}
-
 // Messages
 div.action_messages, div.log_container {
 	margin: 0;
 }
 
 // Positions on the action buttons near page titles
-.evo_post_title {
+.post_title {
 	display: table;
 	h2 {
 		display: table-cell;
@@ -447,3 +456,48 @@ div.action_messages, div.log_container {
 		vertical-align: middle;
 	}
 }
+
+
+/**
+ * 1.0 HEADER STYLE
+ * -----------------------------------------------------------------------------
+ */
+
+ @import "less/header_style/header_style";
+
+
+/**
+* 1.0 MAIN CONTENT STYLE
+* -----------------------------------------------------------------------------
+*/
+
+@import "less/content_style/content_style";
+
+/**
+ * 1.0 SIDEBAR STYLE
+ * -----------------------------------------------------------------------------
+ */
+
+@import "less/sidebar_style/sidebar_style";
+
+
+/**
+ * 1.0 FOOTER STYLE
+ * -----------------------------------------------------------------------------
+ */
+
+ @import "less/footer_style/footer_style";
+
+
+/**
+* 1.0 OTHER STYLE
+* -----------------------------------------------------------------------------
+*/
+@import "less/other_style/other_style";
+
+/**
+* 1.0 RESPONSIVE STYLE
+* -----------------------------------------------------------------------------
+*/
+
+@import "less/responsive";
