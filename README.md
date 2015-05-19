@@ -18,8 +18,8 @@ Awesome Flat Blog Skin
 
 ### Posts Page
 
-![disp=posts](skinshot_posts.jpg)
+![disp=posts](skinshot_posts.png)
 
 ### Single Post Page
 
-![disp=single](skinshot_single.jpg)
+![disp=single](skinshot_single.png)
