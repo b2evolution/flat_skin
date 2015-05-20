@@ -7,41 +7,68 @@
 
   ////////////////////////////////////////////////////////////////
   // FRONT PAGE WIDGET
+  .evo_container__front_page_primary{
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #5E6064;
+    line-height: 22px;
 
-  .jumbotron{
-    background-color: transparent;
-    font-size: 18px;
+    // Jumbotron
+    .jumbotron{
+      background-color: transparent;
+      font-size: 18px;
 
-    .bText{
-      p{
-        font-size: 18px;
+      .styled_content_block{
+        border-bottom: none;
+      }
+
+      .bText, .evo_post__full_text, .evo_post__full{
+          font-size: 16px;
+
+        p{
+          font-size: 16px;
+        }
       }
     }
-  }
 
-  .evo_widget.widget{
 
-  }
+    ////////////////////////////////////////////////////////////////
+    // WIDGET
+    .evo_widget{
 
-  .pagination{
+      padding-bottom: 20px;
 
-    li{
-
-      & > span, & > a{
-        background-color: #34495E;
-        border: 1px solid #34495E;
-        padding: 6px 15px;
-        margin: 0 2px;
-        border-radius: 3px;
-        color: #fff;
-        font-size: 14px;
-
-        &:hover{
-          background-color: #2ECC71;
-          border-color: #2ECC71;
-          cursor: pointer;
+      &.widget_core_coll_tag_cloud{
+        .tag_cloud{
+          a{
+            color: #fff;
+          }
         }
+      }
 
+
+    }
+
+    .pagination{
+
+      li{
+
+        & > span, & > a{
+          background-color: #34495E;
+          border: 1px solid #34495E;
+          padding: 6px 15px;
+          margin: 0 2px;
+          border-radius: 3px;
+          color: #fff;
+          font-size: 14px;
+
+          &:hover{
+            background-color: #2ECC71;
+            border-color: #2ECC71;
+            cursor: pointer;
+          }
+
+        }
       }
     }
   }
@@ -154,12 +181,15 @@
       }
     }
 
-    .small.tag_content{
+    .evo_post__excerpt{
+      margin-bottom: 20px;
 
-    }
-
-    .small.comment_content{
-
+      .evo_post__excerpt_text{
+        letter-spacing: 1px;
+        font-size: 14px;
+        color: #5E6064;
+        line-height: 18px;
+      }
     }
 
   }
@@ -351,6 +381,8 @@
     }
   }
 
+
+  // Pages Style
   .pager{
     margin: 20px -20px;
     li{

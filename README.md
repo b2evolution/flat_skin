@@ -14,6 +14,8 @@ Awesome Flat Blog Skin
 
 ### Front Page
 
+For preview full size, you can open image on new tab and zoom 100%.
+
 ![disp=front](skinshot_front.png)
 
 ### Posts Page
