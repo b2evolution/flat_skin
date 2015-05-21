@@ -160,7 +160,7 @@ footer#footer{
     &.widget_core_user_tools,
     &.widget_core_colls_list_owner{
       ul{
-        li{
+        & > li{
           border-bottom: 1px solid #40576E;
 
           &:last-child{
@@ -173,17 +173,30 @@ footer#footer{
     // Widget Categpry List
     &.widget_core_coll_category_list{
       ul{
-        li{
+        & > li{
 
           & > ul{
             border-top: 1px solid #40576E;
             margin-top: 15px;
             margin-bottom: -10px;
             & > li{
-
+              border-top: 1px solid none;
             }
           }
         }
+
+        & > ul > li{
+          // border-top: 1px solid #40576E;
+
+          &::last-child{
+            border-top: 1px solid #40576E;
+          }
+        }
+
+        & > ul > li{
+          border-bottom: 1px solid #40576E !important;
+        }
+
       }
     }
 
@@ -689,6 +702,7 @@ footer#footer{
 ////////////////////////////////////////////////////////////////
 // OTHER STYLE
 
+body footer.sitewide_footer,
 body div.sitewide_footer {
   background-color: #2C3E50;
   box-shadow: none;

@@ -340,7 +340,7 @@
             }
           }
 
-          ul{
+          li > ul{
             margin-bottom: -12px;
 
             li{
@@ -357,9 +357,22 @@
             }
           }
 
-          li ul ul li {
+          li > ul > li > ul > li {
             border-bottom: 1px solid #ecedee;
           }
+
+          & > ul > li{
+            border-bottom: 1px solid #ecedee;
+
+            &:last-child{
+              border-bottom: 1px solid #ecedee;
+            }
+
+            ul > li{
+              border-bottom: 1px solid #ecedee;
+            }
+          }
+
         }
       }
     }
