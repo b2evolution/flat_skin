@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 // TASK
 
 gulp.task('less', function () {
-  gulp.src('./style.less')
+  gulp.src('style.less')
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(prefix(
@@ -38,8 +38,9 @@ gulp.task('less', function () {
 gulp.task('watch', function() {
     livereload.listen();
     gulp.watch('./less/**/*.less', ['less']);
+    gulp.watch('style.less', ['less']);
 
-    // gulp.watch(['./**']).on('change', livereload.changed);
+    // gulp.watch(['style.less']).on('change', livereload.changed);
 });
 
 

@@ -45,10 +45,127 @@
           }
         }
       }
+    }
 
+    .evo_widget{
+      padding: 0px 15px 20px 15px;
+      overflow: hidden;
+
+      h3{
+        color: #5E6064;
+        font-weight: 500;
+        font-size: 26px;
+        margin: 10px 0;
+      }
+
+      ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+
+        li{
+          padding: 8px 0;
+
+          a{
+            color: #5E6064;
+            font-size: 15px;
+          }
+
+          & > a{
+            position: relative;
+            color: #5E6064;
+            font-size: 15px;
+            padding-left: 15px;
+            display: inline-block;
+            letter-spacing: 1px;
+            -moz-transition: all 0.32s ease;
+            -webkit-transition: all 0.32s ease;
+            -o-transition: all 0.32s ease;
+            transition: all 0.32s ease;
+
+            &::before{
+              content: "\f105";
+              position: absolute;
+              left: 0;
+              top: 0;
+              font-family: "FontAwesome";
+              font-size: inherit;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              transform: translate(0, 0);
+            }
+
+            &:hover{
+              text-decoration: underline;
+              color: #2CC05A;
+            }
+          }
+        }
+      }
+
+      ////////////////////////////////////////////////////////////////
+      // WIDGET WITH LIST
+
+      &.widget_core_coll_post_list,
+      &.widget_core_coll_category_list,
+      &.widget_core_coll_common_links,
+      &.widget_core_coll_xml_feeds,
+      &.widget_core_content_hierarchy,
+      &.widget_core_coll_item_list,
+      &.widget_core_coll_related_post_list,
+      &.widget_core_coll_page_list,
+      &.widget_core_coll_comment_list,
+      &.widget_core_colls_list_public,
+      &.widget_core_user_tools,
+      &.widget_core_colls_list_owner,
+      &.widget_core_coll_link_list{
+        ul{
+          & > li{
+            border-bottom: 1px solid #ecedee;
+
+            &:last-child{
+              border-bottom: none;
+            }
+          }
+        }
+      }
+
+      // Widget Categpry List
+      &.widget_core_coll_category_list{
+
+        ul > ul > li:last-child{
+          border-bottom: 1px solid #ecedee;
+
+        }
+
+        ul{
+          & > li{
+
+            & > ul{
+              border-top: 1px solid #ecedee;
+              margin-top: 15px;
+              margin-bottom: -10px;
+              & > li{
+                border-top: 1px solid none;
+              }
+            }
+          }
+
+          & > ul > li{
+            &::last-child{
+              border-top: 1px solid #ecedee;
+            }
+          }
+
+        }
+      }
 
     }
+
   }
+  ////// End Front Page Style //////
 
   .pagination{
 
