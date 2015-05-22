@@ -35,19 +35,6 @@
     ////////////////////////////////////////////////////////////////
     // WIDGET
     .evo_widget{
-
-      padding-bottom: 20px;
-
-      &.widget_core_coll_tag_cloud{
-        .tag_cloud{
-          a{
-            color: #fff;
-          }
-        }
-      }
-    }
-
-    .evo_widget{
       padding: 0px 15px 20px 15px;
       overflow: hidden;
 
@@ -59,10 +46,14 @@
       }
 
       ul{
-        list-style-type: none;
+        list-style-type: circle;
         margin: 0;
-        padding: 0;
+      }
 
+      & > ul{
+        list-style-type: circle;
+        margin-left: 20px;
+        padding: 0;
 
         li{
           padding: 8px 0;
@@ -70,32 +61,6 @@
           a{
             color: #5E6064;
             font-size: 15px;
-          }
-
-          & > a{
-            position: relative;
-            color: #5E6064;
-            font-size: 15px;
-            padding-left: 15px;
-            display: inline-block;
-            letter-spacing: 1px;
-            -moz-transition: all 0.32s ease;
-            -webkit-transition: all 0.32s ease;
-            -o-transition: all 0.32s ease;
-            transition: all 0.32s ease;
-
-            &::before{
-              content: "\f105";
-              position: absolute;
-              left: 0;
-              top: 0;
-              font-family: "FontAwesome";
-              font-size: inherit;
-              text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-              transform: translate(0, 0);
-            }
 
             &:hover{
               text-decoration: underline;
@@ -107,7 +72,6 @@
 
       ////////////////////////////////////////////////////////////////
       // WIDGET WITH LIST
-
       &.widget_core_coll_post_list,
       &.widget_core_coll_category_list,
       &.widget_core_coll_common_links,
@@ -120,7 +84,8 @@
       &.widget_core_colls_list_public,
       &.widget_core_user_tools,
       &.widget_core_colls_list_owner,
-      &.widget_core_coll_link_list{
+      &.widget_core_coll_link_list,
+      &.widget_core_linkblog{
         ul{
           & > li{
             border-bottom: 1px solid #ecedee;
@@ -134,13 +99,17 @@
 
       // Widget Categpry List
       &.widget_core_coll_category_list{
-
         ul > ul > li:last-child{
           border-bottom: 1px solid #ecedee;
 
         }
 
+        & > ul{
+          margin-left: 20px !important;
+        }
+
         ul{
+          margin: 0;
           & > li{
 
             & > ul{
@@ -162,8 +131,74 @@
         }
       }
 
-    }
+      &.widget_core_coll_tag_cloud{
+        .tag_cloud{
+          a{
+            color: #fff;
+          }
+        }
+      }
 
+      &.widget_core_profile_menu_link{
+        ul{
+          list-style-type: none;
+          li{
+            text-align: center;
+            a{
+              text-transform: capitalize;
+
+              &::before{
+                content: '';
+              }
+
+              &:hover{
+                color: #5E6064;
+                text-decoration: none;
+              }
+            }
+
+            img{
+              border-radius: 100%;
+              border: 2px solid #ccc;
+              display: block;
+              margin: 0 auto 5px;
+
+              &:hover{
+                border-color: #2ECC71;
+              }
+            }
+          }
+        }
+      }
+
+      &.widget_core_coll_search_form{
+        form.search{
+
+          .search_field{
+            width: 80%;
+          }
+
+          .search_submit{
+            width: 15%;
+          }
+        }
+      }
+
+      &.widget_core_coll_common_links{
+        ul{
+          list-style-type: circle;
+          margin-left: 20px;
+
+          a{
+
+            &:hover{
+              color: #2CC05A;
+            }
+          }
+        }
+      }
+
+    }// End Widget Style
   }
   ////// End Front Page Style //////
 
