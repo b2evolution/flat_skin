@@ -85,7 +85,8 @@
       &.widget_core_user_tools,
       &.widget_core_colls_list_owner,
       &.widget_core_coll_link_list,
-      &.widget_core_linkblog{
+      &.widget_core_linkblog,
+      &.widget_plugin_evo_Arch{
         ul{
           & > li{
             border-bottom: 1px solid #ecedee;
@@ -196,6 +197,22 @@
             }
           }
         }
+      }
+
+      &.widget_core_colls_list_public{
+        ul{
+          li{
+            &.selected{
+              a{
+                font-weight: 300;
+              }
+            }
+          }
+        }
+      }
+
+      &.widget_core_coll_title{
+        text-align: center;
       }
 
     }// End Widget Style

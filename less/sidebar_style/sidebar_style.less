@@ -96,25 +96,9 @@
 
     &.widget_core_coll_avatar{
       margin-top: 0;
-
-      img{
-        border-radius: 100%;
-        border: 6px solid #34495E;
-        -moz-transition: all 0.32s ease;
-        -webkit-transition: all 0.32s ease;
-        -o-transition: all 0.32s ease;
-        transition: all 0.32s ease;
-
-        &:hover{
-          border-color: #2ECC71;
-          cursor: pointer
-        }
-
-      }
     }
 
     &.widget_core_coll_longdesc{
-      text-align: center;
 
       .panel-heading{
         border-bottom: none;
@@ -128,6 +112,9 @@
             font-size: 28px;
             font-weight: 400;
             color: #505C69;
+            &:hover{
+              text-decoration: none;
+            }
           }
         }
       }
@@ -540,33 +527,30 @@
 
     &.widget_core_linkblog {
 
-      .panel-body{
+      ul{
+
+        & > li{
+          border-bottom: 1px solid #ecedee;
+          padding: 12px 0 0 0;
+
+          &:last-child{
+            border-bottom: none;
+          }
+        }
 
         ul{
+          margin-top: 5px;
 
           & > li{
             border-bottom: 1px solid #ecedee;
-            padding: 12px 0 0 0;
+            padding: 12px 0;
 
+            &:first-child{
+              border-top: 1px solid #ecedee;
+              margin-top: 12px;
+            }
             &:last-child{
               border-bottom: none;
-            }
-          }
-
-          ul{
-            margin-top: 5px;
-
-            & > li{
-              border-bottom: 1px solid #ecedee;
-              padding: 12px 0;
-
-              &:first-child{
-                border-top: 1px solid #ecedee;
-                margin-top: 12px;
-              }
-              &:last-child{
-                border-bottom: none;
-              }
             }
           }
         }
