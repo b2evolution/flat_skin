@@ -93,35 +93,55 @@
     .nav{
       li{
         a{
-          margin: 2px 0;
+          margin: 3px 2px;
         }
       }
     }
   }
 
-   #main_sidebar{
+  #main_sidebar{
 
-     .panel.widget{
+    .panel.widget{
 
+      &.widget_core_coll_post_list,
+      &.widget.widget_core_coll_item_list,
+      &.widget_core_coll_related_post_list,
+      &.widget_core_coll_page_list,
+      &.widget_core_coll_page_list{
 
-       &.widget_core_coll_post_list,
-       &.widget.widget_core_coll_item_list,
-       &.widget_core_coll_related_post_list,
-       &.widget_core_coll_page_list{
+        .panel-body{
+          ul{
+            li{
 
-         .panel-body{
-           ul{
-             li{
+              .item_title{
+                width: 85%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
-               .item_title{
-                 width: 85%;
-               }
-             }
-           }
-         }
-       }
-     }
-   }
+  footer#footer{
+
+    .evo_widget{
+      &.widget_core_coll_post_list,
+      &.widget.widget_core_coll_item_list,
+      &.widget_core_coll_related_post_list,
+      &.widget_core_coll_page_list,
+      &.widget_core_coll_page_list{
+        ul{
+          li{
+            .item_title{
+              width: 85%;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
 
 @media only screen and(max-width: 640px){
@@ -219,4 +239,28 @@
        }
      }
    }
+
+
+   ////////////////////////////////////////////////////////////////
+   // FOOTER
+
+   footer#footer{
+
+     .evo_widget{
+       &.widget_core_coll_post_list,
+       &.widget.widget_core_coll_item_list,
+       &.widget_core_coll_related_post_list,
+       &.widget_core_coll_page_list,
+       &.widget_core_coll_page_list{
+         ul{
+           li{
+             .item_title{
+               width: 70%;
+             }
+           }
+         }
+       }
+     }
+   }
+
 }

@@ -51,7 +51,24 @@ siteskin_include( '_site_body_header.inc.php' );
 	<header id="header" >
 		<div class="container">
 
-			<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
+			<div class="col-xs-12 col-sm-6 col-md-8">
+				<div class="pageHeader">
+					<?php
+						// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
+						// Display container and contents:
+						skin_container( NT_('Header'), array(
+								// The following params will be used as defaults for widgets included in this container:
+								'block_start'       => '<div class="widget $wi_class$">',
+								'block_end'         => '</div>',
+								'block_title_start' => '<h1>',
+								'block_title_end'   => '</h1>',
+							) );
+						// ----------------------------- END OF "Header" CONTAINER -----------------------------
+					?>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-md-4">
 				<div class="PageTop">
 				<?php
 					// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
@@ -68,23 +85,6 @@ siteskin_include( '_site_body_header.inc.php' );
 						) );
 					// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
 				?>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-sm-12 col-md-8 col-md-pull-4">
-				<div class="pageHeader">
-					<?php
-						// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-						// Display container and contents:
-						skin_container( NT_('Header'), array(
-								// The following params will be used as defaults for widgets included in this container:
-								'block_start'       => '<div class="widget $wi_class$">',
-								'block_end'         => '</div>',
-								'block_title_start' => '<h1>',
-								'block_title_end'   => '</h1>',
-							) );
-						// ----------------------------- END OF "Header" CONTAINER -----------------------------
-					?>
 				</div>
 			</div>
 
@@ -480,7 +480,7 @@ siteskin_include( '_site_body_header.inc.php' );
 					// Display footer text (text can be edited in Blog Settings):
 					$Blog->footer_text( array(
 							'before'      => '',
-							'after'       => ' &bull; ',
+							'after'       => '',
 						) );
 
 				// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
@@ -508,9 +508,9 @@ siteskin_include( '_site_body_header.inc.php' );
 					// If you can add your own credits without removing the defaults, you'll be very cool :))
 					// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
 					credits( array(
-							'list_start'  => '&bull;',
+							'list_start'  => ' ',
 							'list_end'    => ' ',
-							'separator'   => '&bull;',
+							'separator'   => ' ',
 							'item_start'  => ' ',
 							'item_end'    => ' ',
 						) );
@@ -519,18 +519,6 @@ siteskin_include( '_site_body_header.inc.php' );
 
 			<div class="clearfix"></div>
 
-			<?php
-				// Please help us promote b2evolution and leave this logo on your blog:
-				powered_by( array(
-						'block_start' => '<div class="powered_by">',
-						'block_end'   => '</div>',
-						// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
-						'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
-						'img_width'   => 120,
-						'img_height'  => 32,
-					) );
-			?>
-
 		</div>
 		<!-- end container powered_by -->
 	</div>
@@ -538,6 +526,18 @@ siteskin_include( '_site_body_header.inc.php' );
 
 </footer>
 <!-- end Footer -->
+
+	<?php
+		// Please help us promote b2evolution and leave this logo on your blog:
+		powered_by( array(
+				'block_start' => '<div class="powered_by">',
+				'block_end'   => '</div>',
+				// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
+				'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
+				'img_width'   => 120,
+				'img_height'  => 32,
+			) );
+	?>
 
 	</div>
 	<!-- End Row Body -->

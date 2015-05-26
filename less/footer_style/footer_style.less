@@ -21,7 +21,7 @@ footer#footer{
     clear: both;
   }
 
-  .evo_widget.widget{
+  .evo_widget{
     padding: 0px 15px 20px 15px;
     overflow: hidden;
 
@@ -39,7 +39,7 @@ footer#footer{
 
 
       li{
-        // margin: 5px 0;
+
         padding: 12px 0;
 
         a{
@@ -54,10 +54,6 @@ footer#footer{
           padding-left: 15px;
           display: inline-block;
           letter-spacing: 0.1px;
-          -moz-transition: all 0.32s ease;
-          -webkit-transition: all 0.32s ease;
-          -o-transition: all 0.32s ease;
-          transition: all 0.32s ease;
 
           &::before{
             content: "\f105";
@@ -73,8 +69,8 @@ footer#footer{
           }
 
           &:hover{
-            text-decoration: none;
-            color: #2CC05A;
+            text-decoration: underline;
+            color: #2DE265;
           }
         }
       }
@@ -215,10 +211,6 @@ footer#footer{
             padding-left: 15px;
             display: inline-block;
             letter-spacing: 0.1px;
-            -moz-transition: all 0.32s ease;
-            -webkit-transition: all 0.32s ease;
-            -o-transition: all 0.32s ease;
-            transition: all 0.32s ease;
 
             &::before{
               content: "\f105";
@@ -234,8 +226,7 @@ footer#footer{
             }
 
             &:hover{
-              text-decoration: none;
-              color: #2CC05A;
+              color: #2DE265;
             }
           }
         }
@@ -352,13 +343,9 @@ footer#footer{
           padding-left: 15px;
           display: inline-block;
           letter-spacing: 0.1px;
-          -moz-transition: all 0.32s ease;
-          -webkit-transition: all 0.32s ease;
-          -o-transition: all 0.32s ease;
-          transition: all 0.32s ease;
 
           &:hover{
-            color: #2CC05A;
+            color: #2DE265;
           }
 
           &::before{
@@ -398,7 +385,7 @@ footer#footer{
             width: 62%;
 
             a:hover{
-              color: #2CC05A;
+              color: #2DE265;
             }
           }
           .item_images{
@@ -535,7 +522,8 @@ footer#footer{
     // Not List Widget
 
     &.widget_core_coll_avatar,
-    &.widget_core_user_login{
+    &.widget_core_user_login,
+    &.widget_core_profile_menu_link{
 
       img{
         border-radius: 100%;
@@ -546,12 +534,13 @@ footer#footer{
         cursor: pointer;
 
         &:hover{
-          border-color: #4B7299;
+          border-color: #2ECC71;
         }
       }
     }
 
-    &.widget_core_coll_longdesc{
+    &.widget_core_coll_longdesc,
+    &.widget_core_coll_tagline{
       text-align: center;
     }
 
@@ -563,6 +552,9 @@ footer#footer{
           color: #fff;
           display: block;
           margin-bottom: 5px;
+          &:hover{
+            text-decoration: none;
+          }
         }
 
         small{
@@ -579,8 +571,13 @@ footer#footer{
 
           a{
             text-transform: capitalize;
-            font-size: 22px;
+            font-size: 20px;
+            font-weight: 300;
             padding: 0;
+
+            &:hover{
+              text-decoration: none;
+            }
 
             &:before{
               content: '';
@@ -671,7 +668,7 @@ footer#footer{
   // Copyright
 
   .footer_copyright{
-    padding: 30px 0px 5px 0px;
+    padding: 30px 0px 30px 0px;
     background-color: #2C3E50;
     margin-top: 20px;
 
@@ -687,13 +684,10 @@ footer#footer{
         text-decoration: none;
 
         &:hover{
-          color: #fff;
+          color: #FFFFFF;
+          text-decoration: underline;
         }
       }
-    }
-
-    .powered_by{
-      margin: 0;
     }
   }
 
@@ -703,10 +697,8 @@ footer#footer{
 ////////////////////////////////////////////////////////////////
 // OTHER STYLE
 
-body footer.sitewide_footer,
-body div.sitewide_footer {
-  background-color: #2C3E50;
-  box-shadow: none;
-  border-top: none;
-  padding: 5px 0 10px;
+body .powered_by{
+  background-color: #fff;
+  margin: 0;
+  padding: 20px 0 10px;
 }
