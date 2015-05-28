@@ -35,7 +35,7 @@
       outline: none;
       box-shadow: none;
 
-      &:focus, &:hover{
+      &:focus{
         border-color: #2CC05A;
       }
     }
@@ -124,7 +124,14 @@
   }
 }
 
-.widget_core_linkblog {
+.widget_core_coll_media_index{
+  span.note{
+    padding-left: 10px;
+  }
+}
+
+.widget_core_linkblog,
+.widget_core_coll_post_list {
 
   ul{
     & > li{
@@ -149,6 +156,19 @@
         }
         &:last-child{
           border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+
+.widget_core_coll_comment_list{
+  ul{
+    li{
+      a{
+        &:hover{
+          background-color: transparent;
         }
       }
     }
