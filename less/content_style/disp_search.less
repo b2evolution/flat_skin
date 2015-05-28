@@ -1,0 +1,103 @@
+body.disp_search{
+
+  #main_area{
+    h2{
+      text-align: center;
+      font-size: 36px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .widget_core_coll_search_form{
+
+      .extended_search_form{
+
+        input.search_field{
+          height: 45px;
+          margin: 0;
+          box-shadow: none;
+          border-radius: 2px 0 0 2px;
+          border: 1px solid #34495E;
+          -moz-transition: all 0.32s ease;
+          -webkit-transition: all 0.32s ease;
+          -o-transition: all 0.32s ease;
+          transition: all 0.32s ease;
+
+          &:hover{
+            box-shadow: none;
+            margin: 0;
+          }
+
+          &:focus{
+            outline: none;
+            border-color: #2ECC71;
+            box-shadow: none;
+          }
+        }
+
+        input.search_field:focus + span input.search_submit{
+          background-color: #2ECC71;
+        }
+
+        input.search_submit{
+          padding: 10px 20px;
+          border-radius: 0 2px 2px 0;
+          height: 45px;
+          border: 1px solid transparent;
+          outline: none;
+          margin: 0;
+          background: #34495E;
+          -moz-transition: all 0.32s ease;
+          -webkit-transition: all 0.32s ease;
+          -o-transition: all 0.32s ease;
+          transition: all 0.32s ease;
+
+          &:hover{
+            outline: none;
+            border-color: transparent ;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+
+    .search_result{
+
+      .search_title{
+        font-size: 24px;
+        line-height: 24px;
+        text-transform: capitalize;
+        margin: 10px 0;
+        font-weight: 400;
+        color: #505C69;
+
+        a{
+          text-decoration: none;
+          color: #505C69;
+
+          &:hover{
+            color: #2ECC71;
+          }
+        }
+
+      }
+
+      .result_content{
+        font-size: 15px;
+        padding: 5px 0 20px;
+        color: #5E6064;
+      }
+
+      .search_info{
+        font-size: 12px;
+        text-transform: capitalize;
+
+        img{
+          border-radius: 100%;
+        }
+      }
+    }
+
+  }
+
+}
