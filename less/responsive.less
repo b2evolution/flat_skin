@@ -1,11 +1,51 @@
 
-////////////////////////////////////////////////////////////////
-// SIDEBAR WIDGET
 @media only screen and(max-width: 1024px){
+  ////////////////////////////////////////////////////////////////
+  // FRONT STYLE
+  #main_area{
+    .evo_widget{
+
+      &.widget_core_coll_item_list{
+        ul{
+          li{
+
+            .item_title{
+              width: 80% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // WIDGET
+  #main_sidebar .panel.widget.widget_core_coll_tag_cloud .panel-body,
+  .widget_core_coll_tag_cloud{
+    .tag_cloud a{
+      font-size: 12px !important;
+    }
+  }
+
+   .widget_core_coll_media_index,
+   .widget_core_user_avatars {
+
+     .widget_grid tr td .note{
+       font-size: 13px;
+     }
+
+     a > img{
+       max-width: 100%;
+       height: auto;
+     }
+   }
+
+
+  ////////////////////////////////////////////////////////////////
+  // SIDEBAR STYLE
    #main_sidebar{
 
      .panel.widget{
-
 
        &.widget_core_coll_post_list,
        &.widget.widget_core_coll_item_list,
@@ -24,8 +64,42 @@
          }
        }
      }
+
    }
+
+   ////////////////////////////////////////////////////////////////
+   // FOOTER STYLE
+
+   footer#footer{
+
+      .evo_widget{
+        ul{
+          li{
+            a{
+              font-size: 14px;
+            }
+          }
+        }
+
+        &.widget_core_coll_post_list,
+        &.widget.widget_core_coll_item_list,
+        &.widget_core_coll_related_post_list,
+        &.widget_core_coll_page_list{
+          ul{
+            li{
+
+              .item_title{
+                width: 56%;
+              }
+            }
+          }
+        }
+
+      }
+   }
+
 }
+
 
 @media only screen and(max-width: 980px){
    #main_sidebar{
@@ -81,6 +155,8 @@
 
 @media only screen and(max-width: 768px){
 
+  ////////////////////////////////////////////////////////////////
+  // HEADER STYLE
   header#header{
     text-align: center;
 
@@ -94,6 +170,24 @@
       li{
         a{
           margin: 3px 2px;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // FRONT STYLE
+  #main_area{
+    .evo_widget{
+
+      &.widget_core_coll_item_list{
+        ul{
+          li{
+
+            .item_title{
+              width: 84% !important;
+            }
+          }
         }
       }
     }
@@ -263,7 +357,6 @@
 
    ////////////////////////////////////////////////////////////////
    // FOOTER
-
    footer#footer{
 
      .evo_widget{
