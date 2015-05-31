@@ -1,12 +1,13 @@
 # Flat Skin for b2evolution CMS v6
 
-Awesome Flat Blog Skin
+Awesome & Creative Ful Responsive Flat Blog. It is built with Bootstrap, using HTML5, CSS3, JS and Jquery.
 
-### Feature
+### Features
 
 - Flat Design
 - Smoot scroll
-- Responsive
+- Fully Responsive
+- Clean & Modern Design
 - Support Style All widget
 - Full Width, Sidebar left, Sidebar Right, Widget Footer 4 Column, Widget Footer 1 Column
 - Etc.
