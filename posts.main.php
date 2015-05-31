@@ -107,26 +107,26 @@ siteskin_include( '_site_body_header.inc.php' );
 
 				<div class="col-md-12 collapse navbar-collapse" id="flat_nav">
 					<ul class="nav nav-tabs navbar-nav">
-			<?php
-				// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-				// Display container and contents:
-				// Note: this container is designed to be a single <ul> list
-				skin_container( NT_('Menu'), array(
-						// The following params will be used as defaults for widgets included in this container:
-						'block_start'         => '',
-						'block_end'           => '',
-						'block_display_title' => false,
-						'list_start'          => '',
-						'list_end'            => '',
-						'item_start'          => '<li>',
-						'item_end'            => '</li>',
-						'item_selected_start' => '<li class="active">',
-						'item_selected_end'   => '</li>',
-						'item_title_before'   => '',
-						'item_title_after'    => '',
-					) );
-				// ----------------------------- END OF "Menu" CONTAINER -----------------------------
-			?>
+					<?php
+						// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+						// Display container and contents:
+						// Note: this container is designed to be a single <ul> list
+						skin_container( NT_('Menu'), array(
+								// The following params will be used as defaults for widgets included in this container:
+								'block_start'         => '',
+								'block_end'           => '',
+								'block_display_title' => false,
+								'list_start'          => '',
+								'list_end'            => '',
+								'item_start'          => '<li>',
+								'item_end'            => '</li>',
+								'item_selected_start' => '<li class="active">',
+								'item_selected_end'   => '</li>',
+								'item_title_before'   => '',
+								'item_title_after'    => '',
+							) );
+						// ----------------------------- END OF "Menu" CONTAINER -----------------------------
+					?>
 					</ul>
 				</div>
 			</div>
@@ -136,7 +136,6 @@ siteskin_include( '_site_body_header.inc.php' );
 	</nav>
 
 <!-- =================================== START OF MAIN AREA =================================== -->
-
 <div class="container">
 	<!-- <div class="row"> -->
 		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?> " <?php
