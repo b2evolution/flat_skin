@@ -20,7 +20,10 @@ global $Item, $Skin;
 $params = array_merge( array(
 		'feature_block'    => false,
 		'content_mode'     => 'auto',		// 'auto' will auto select depending on $disp-detail
-		'item_class'       => 'bPost',
+		// Classes for the <article> tag:
+		'item_class'                 => 'bPost evo_post evo_content_block',
+		'item_type_class'            => 'evo_post__ptyp_',
+		'item_status_class'          => 'evo_post__',
 		'image_class'      => 'img-responsive',
 		'image_size'       => 'fit-1280x720',
 		'author_link_text' => 'preferredname',

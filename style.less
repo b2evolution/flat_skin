@@ -222,6 +222,7 @@ textarea.message_text {
 
 // Fix the form elements
 .comment_form {
+	box-shadow: none !important;
 	h3 {
 		margin: 0;
 	}
@@ -532,11 +533,62 @@ div.action_messages, div.log_container {
 		padding-bottom: 15px;
 	}
 }
-.bPost {
+.evo_post {
 	.evo_post_gallery {
 		margin-top: 15px;
 	}
 }
 .evo_post_comment_notification a {
 	white-space: normal;
+}
+.disp_single #main_area .styled_content_block {
+	border-bottom: 0 !important;
+}
+.pager {
+	border-bottom: 1px solid #ecedee;
+	    padding-bottom: 20px;
+		    margin: 20px 0px !important;
+}
+#bCalendarToday {
+	border-radius: 0;
+}
+@media only screen and(max-width: 992px){
+	.container.main-content {
+		padding-left: 5px;
+		padding-right: 5px;
+		.col-md-8 {
+		padding-left: 0;
+		padding-right: 0;
+		}
+	}
+	#main_area {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+@media only screen and(max-width: 768px){
+	.pager {
+		.previous, .next {
+			width: auto !important;
+		}
+	}
+}
+.evo_post img {
+	border-radius: 0;
+}
+.jumbotron {
+    border-bottom: 2px solid #eee;
+    border-radius: 0 !important;
+	padding-right: 30px;
+    padding-left: 30px;
+	ul {
+		margin: 0 0 10px 25px !important;
+	}
+}
+.well.evo_featured_post {
+	padding-bottom: 40px;
+}
+.well .small.text-muted {
+	text-transform: uppercase;
+	margin-bottom: 15px;
 }

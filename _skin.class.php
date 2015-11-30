@@ -149,16 +149,17 @@ class flat_Skin extends Skin
 		{
 			global $Messages, $debug;
 			// Request some common features that the parent function (Skin::display_init()) knows how to provide:
-			parent::display_init( array(
-					'jquery', 							// Load jQuery
-					'font_awesome', 					// Load Font Awesome (and use its icons as a priority over the Bootstrap glyphicons)
-					'bootstrap', 						// Load Bootstrap (without 'bootstrap_theme_css')
-					'bootstrap_evo_css', 			// Load the b2evo_base styles for Bootstrap (instead of the old b2evo_base styles)
-					'bootstrap_messages',			// Initialize $Messages Class to use Bootstrap styles
-					'style_css', 						// Load the style.css file of the current skin
-					'colorbox',							// Load Colorbox (a lightweight Lightbox alternative + customizations for b2evo)
-					'bootstrap_init_tooltips', 	// Inline JS to init Bootstrap tooltips (E.g. on comment form for allowed file extensions)
-				) );
+		parent::display_init( array(
+				'jquery',                  // Load jQuery
+				'font_awesome',            // Load Font Awesome (and use its icons as a priority over the Bootstrap glyphicons)
+				'bootstrap',               // Load Bootstrap (without 'bootstrap_theme_css')
+				'bootstrap_evo_css',       // Load the b2evo_base styles for Bootstrap (instead of the old b2evo_base styles)
+				'bootstrap_messages',      // Initialize $Messages Class to use Bootstrap styles
+				'style_css',               // Load the style.css file of the current skin
+				'colorbox',                // Load Colorbox (a lightweight Lightbox alternative + customizations for b2evo)
+				'bootstrap_init_tooltips', // Inline JS to init Bootstrap tooltips (E.g. on comment form for allowed file extensions)
+				'disp_auto',               // Automatically include additional CSS and/or JS required by certain disps (replace with 'disp_off' to disable this)
+			) );
 			// Skin specific initializations:
 		}
 
@@ -171,7 +172,7 @@ class flat_Skin extends Skin
 		switch( $name )
 		{
 			case 'Results':
-				// Results list:
+				// Results list (Used to view the lists of the users, messages, contacts and etc.):
 				return array(
 					'page_url' => '', // All generated links will refer to the current page
 					'before' => '<div class="results panel panel-default">',
@@ -182,9 +183,13 @@ class flat_Skin extends Skin
 							.'</ul></div>',
 						'header_text_single' => '',
 					'header_end' => '',
-					'head_title' => '<div class="panel-heading">$title$<span class="pull-right">$global_icons$</span></div>'."\n",
-					'filters_start' => '<div class="filters panel-body form-inline">',
-					'filters_end' => '</div>',
+					'head_title' => '<div class="panel-heading fieldset_title"><span class="pull-right">$global_icons$</span><h3 class="panel-title">$title$</h3></div>'."\n",
+					'global_icons_class' => 'btn btn-default btn-sm',
+					'filters_start'        => '<div class="filters panel-body">',
+					'filters_end'          => '</div>',
+					'filter_button_class'  => 'btn-sm btn-info',
+					'filter_button_before' => '<div class="form-group pull-right">',
+					'filter_button_after'  => '</div>',
 					'messages_start' => '<div class="messages form-inline">',
 					'messages_end' => '</div>',
 					'messages_separator' => '<br />',
@@ -242,9 +247,11 @@ class flat_Skin extends Skin
 					                  /* .' <br />$first$  $list_prev$  $list$  $list_next$  $last$ :: $prev$ | $next$') */,
 					'footer_text_single' => '<div class="center">$page_size$</div>',
 					'footer_text_no_limit' => '', // Text if theres no LIMIT and therefor only one page anyway
-						'page_current_template' => '<span><b>$page_num$</b></span>',
+						'page_current_template' => '<span>$page_num$</span>',
 						'page_item_before' => '<li>',
 						'page_item_after' => '</li>',
+						'page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
 						'prev_text' => T_('Previous'),
 						'next_text' => T_('Next'),
 						'no_prev_text' => '',
@@ -309,7 +316,7 @@ class flat_Skin extends Skin
 
 			case 'compact_form':
 			case 'Form':
-				// Default Form settings:
+				// Default Form settings (Used for any form on front-office):
 				return array(
 					'layout'         => 'fieldset',
 					'formclass'      => 'form-horizontal',
@@ -353,10 +360,10 @@ class flat_Skin extends Skin
 					'radio_oneline_end'      => "</label>\n",
 				);
 
-			case 'linespan_form':
-				// Linespan form:
+			case 'fixed_form':
+				// Form with fixed label width (Used for form on disp=user):
 				return array(
-					'layout'         => 'linespan',
+					'layout'         => 'fieldset',
 					'formclass'      => 'form-horizontal',
 					'formstart'      => '',
 					'formend'        => '',
@@ -365,17 +372,17 @@ class flat_Skin extends Skin
 					'fieldset_begin' => '<div class="fieldset_wrapper $class$" id="fieldset_wrapper_$id$"><fieldset $fieldset_attribs$><div class="panel panel-default">'."\n"
 															.'<legend class="panel-heading" $title_attribs$>$fieldset_title$</legend><div class="panel-body $class$">'."\n",
 					'fieldset_end'   => '</div></div></fieldset></div>'."\n",
-					'fieldstart'     => '<div class="form-group" $ID$>'."\n",
+					'fieldstart'     => '<div class="form-group fixedform-group" $ID$>'."\n",
 					'fieldend'       => "</div>\n\n",
-					'labelclass'     => '',
+					'labelclass'     => 'control-label fixedform-label',
 					'labelstart'     => '',
 					'labelend'       => "\n",
-					'labelempty'     => '',
-					'inputstart'     => '<div class="controls">',
+					'labelempty'     => '<label class="control-label fixedform-label"></label>',
+					'inputstart'     => '<div class="controls fixedform-controls">',
 					'inputend'       => "</div>\n",
-					'infostart'      => '<div class="controls"><div class="form-control-static">',
+					'infostart'      => '<div class="controls fixedform-controls"><div class="form-control-static">',
 					'infoend'        => "</div></div>\n",
-					'buttonsstart'   => '<div class="form-group"><div class="control-buttons">',
+					'buttonsstart'   => '<div class="form-group"><div class="control-buttons fixedform-controls">',
 					'buttonsend'     => "</div></div>\n\n",
 					'customstart'    => '<div class="custom_content">',
 					'customend'      => "</div>\n",
@@ -383,17 +390,13 @@ class flat_Skin extends Skin
 					// Additional params depending on field type:
 					// - checkbox
 					'inputclass_checkbox'    => '',
-					'inputstart_checkbox'    => '<div class="controls"><div class="checkbox"><label>',
+					'inputstart_checkbox'    => '<div class="controls fixedform-controls"><div class="checkbox"><label>',
 					'inputend_checkbox'      => "</label></div></div>\n",
 					'checkbox_newline_start' => '<div class="checkbox">',
 					'checkbox_newline_end'   => "</div>\n",
-					'checkbox_basic_start'   => '<div class="checkbox"><label>',
-					'checkbox_basic_end'     => "</label></div>\n",
 					// - radio
-					'fieldstart_radio'       => '',
-					'fieldend_radio'         => '',
-					'inputstart_radio'       => '<div class="controls">',
-					'inputend_radio'         => "</div>\n",
+					'fieldstart_radio'       => '<div class="form-group radio-group" $ID$>'."\n",
+					'fieldend_radio'         => "</div>\n\n",
 					'inputclass_radio'       => '',
 					'radio_label_format'     => '$radio_option_label$',
 					'radio_newline_start'    => '<div class="radio"><label>',
@@ -403,7 +406,7 @@ class flat_Skin extends Skin
 				);
 
 			case 'user_navigation':
-				// The Prev/Next links of users
+				// The Prev/Next links of users (Used on disp=user to navigate between users):
 				return array(
 					'block_start'  => '<ul class="pager">',
 					'prev_start'   => '<li class="previous">',
@@ -418,7 +421,7 @@ class flat_Skin extends Skin
 				);
 
 			case 'button_classes':
-				// Button classes
+				// Button classes (Used to initialize classes for action buttons like buttons to spam vote, or edit an intro post):
 				return array(
 					'button'       => 'btn btn-default btn-xs',
 					'button_red'   => 'btn-danger',
@@ -429,12 +432,15 @@ class flat_Skin extends Skin
 
 			case 'tooltip_plugin':
 				// Plugin name for tooltips: 'bubbletip' or 'popover'
+				// We should use 'popover' tooltip plugin for bootstrap skins
+				// This tooltips appear on mouse over user logins or on plugin help icons
 				return 'popover';
 				break;
 
 			case 'plugin_template':
-				// Template for plugins
+				// Template for plugins:
 				return array(
+						// This template is used to build a plugin toolbar with action buttons above edit item/comment area:
 						'toolbar_before'       => '<div class="btn-toolbar $toolbar_class$" role="toolbar">',
 						'toolbar_after'        => '</div>',
 						'toolbar_title_before' => '<div class="btn-toolbar-title">',

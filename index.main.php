@@ -138,7 +138,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	</nav>
 
 <!-- =================================== START OF MAIN AREA =================================== -->
-<div class="container">
+<div class="container main-content">
 	<!-- <div class="row"> -->
 		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?> " <?php
 				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;padding:0 0 0 30px;"' : '' ); ?>>
@@ -156,6 +156,19 @@ siteskin_include( '_site_body_header.inc.php' );
 			) );
 		// --------------------------------- END OF MESSAGES ---------------------------------
 	}
+	?>
+
+	<?php
+		// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
+		item_prevnext_links( array(
+				'block_start' => '<ul class="pager">',
+				'prev_start'  => '<li class="previous">',
+				'prev_end'    => '</li>',
+				'next_start'  => '<li class="next">',
+				'next_end'    => '</li>',
+				'block_end'   => '</ul>',
+			) );
+		// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
 	?>
 
 	<?php
@@ -203,6 +216,8 @@ siteskin_include( '_site_body_header.inc.php' );
 				'page_current_template' => '<span><b>$page_num$</b></span>',
 				'page_item_before' => '<li>',
 				'page_item_after' => '</li>',
+				                'prev_text' => '<i class="fa fa-angle-left"></i>',
+                'next_text' => '<i class="fa fa-angle-right"></i>',
 			) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	?>
@@ -261,8 +276,8 @@ siteskin_include( '_site_body_header.inc.php' );
 				'page_current_template' => '<span><b>$page_num$</b></span>',
 				'page_item_before' => '<li>',
 				'page_item_after' => '</li>',
-				'prev_text' => '&lt;&lt;',
-				'next_text' => '&gt;&gt;',
+                'prev_text' => '<i class="fa fa-angle-left"></i>',
+                'next_text' => '<i class="fa fa-angle-right"></i>',
 			) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	}
@@ -291,8 +306,8 @@ siteskin_include( '_site_body_header.inc.php' );
 					'page_current_template' => '<span><b>$page_num$</b></span>',
 					'page_item_before'      => '<li>',
 					'page_item_after'       => '</li>',
-					'prev_text'             => '&lt;&lt;',
-					'next_text'             => '&gt;&gt;',
+					'prev_text' => '<i class="fa fa-angle-left"></i>',
+					'next_text' => '<i class="fa fa-angle-right"></i>',
 				),
 				// Form params for the forms below: login, register, lostpassword, activateinfo and msgform
 				'skin_form_before'      => '<div class="panel panel-default skin-form">'
@@ -368,19 +383,6 @@ siteskin_include( '_site_body_header.inc.php' );
 		// Note: you can customize any of the sub templates included here by
 		// copying the matching php file into your skin directory.
 		// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
-	?>
-
-	<?php
-		// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
-		item_prevnext_links( array(
-				'block_start' => '<ul class="pager">',
-				'prev_start'  => '<li class="previous">',
-				'prev_end'    => '</li>',
-				'next_start'  => '<li class="next">',
-				'next_end'    => '</li>',
-				'block_end'   => '</ul>',
-			) );
-		// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
 	?>
 
 	</div>
@@ -544,7 +546,6 @@ siteskin_include( '_site_body_header.inc.php' );
 <!-- End Container fluid-->
 
 <!-- JS Include -->
-<script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/main.js"></script>
 
 <?php
