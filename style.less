@@ -526,6 +526,7 @@ div.action_messages, div.log_container {
 */
 .well {
 	border-radius: 2px;
+	border: 0;
 	h2 a:hover {
 		text-decoration: none;
 	}
@@ -579,11 +580,14 @@ div.action_messages, div.log_container {
 .jumbotron {
     border-bottom: 2px solid #eee;
     border-radius: 0 !important;
-	padding-right: 30px;
-    padding-left: 30px;
+	text-align: justify;
+	padding: 0 !important;
+	h2 {
+		padding-top: 10px;
+	}
 	ul {
 		margin: 0 0 10px 25px !important;
-	}
+	}	
 }
 .well.evo_featured_post {
 	padding-bottom: 40px;
@@ -591,4 +595,14 @@ div.action_messages, div.log_container {
 .well .small.text-muted {
 	text-transform: uppercase;
 	margin-bottom: 15px;
+}
+.previous {
+	float: left;
+}
+.pager .next {
+	float: right;
+	margin-top: -10px;
+	a {
+		margin-top: 0;
+	}
 }

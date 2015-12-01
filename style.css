@@ -2759,6 +2759,7 @@ body .powered_by {
 */
 .well {
   border-radius: 2px;
+  border: 0;
 }
 .well h2 a:hover {
   text-decoration: none;
@@ -2809,8 +2810,11 @@ body .powered_by {
 .jumbotron {
   border-bottom: 2px solid #eee;
   border-radius: 0 !important;
-  padding-right: 30px;
-  padding-left: 30px;
+  text-align: justify;
+  padding: 0 !important;
+}
+.jumbotron h2 {
+  padding-top: 10px;
 }
 .jumbotron ul {
   margin: 0 0 10px 25px !important;
@@ -2821,4 +2825,14 @@ body .powered_by {
 .well .small.text-muted {
   text-transform: uppercase;
   margin-bottom: 15px;
+}
+.previous {
+  float: left;
+}
+.pager .next {
+  float: right;
+  margin-top: -10px;
+}
+.pager .next a {
+  margin-top: 0;
 }
