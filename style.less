@@ -15,6 +15,25 @@
  */
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,500,700,900);
 
+// --------- Universal item list widget & Recent posts widget ---------
+@import "../../rsc/less/_universal_item_list_widget.module.less";
+// --------------------------------------------------------------------
+
+// ------------------- Media Index widget --------------------
+@import "../../rsc/less/_coll_media_index_widget.module.less";
+// -----------------------------------------------------------
+
+// ----------- User Avatars (User List) widget ------------
+@import "../../rsc/less/_user_avatars_widget.module.less";
+// --------------------------------------------------------
+
+// -----------------About Author widget -------------------
+@import "../../rsc/less/_about_author_widget.module.less";
+// --------------------------------------------------------
+
+// ------------- Organization Members widget -------------
+@import "../../rsc/less/_org_members_widget.module.less";
+
 body{
   background-color: #F2F2F2;
   font-family: "Roboto", sans-serif;
@@ -478,10 +497,12 @@ div.action_messages, div.log_container {
 @import "less/content_style/content_style";
 @import "less/content_style/disp_comments";
 @import "less/content_style/disp_catdir";
+@import "less/content_style/disp_arcdir";
 @import "less/content_style/archive";
 @import "less/content_style/disp_search";
 @import "less/content_style/disp_postidx";
 @import "less/content_style/disp_sitemaps";
+@import "less/content_style/disp_user";
 
 
 /**
@@ -534,11 +555,12 @@ div.action_messages, div.log_container {
 		padding-bottom: 15px;
 	}
 }
+/*
 .evo_post {
 	.evo_post_gallery {
 		margin-top: 15px;
 	}
-}
+}*/
 .evo_post_comment_notification a {
 	white-space: normal;
 }
@@ -605,4 +627,66 @@ div.action_messages, div.log_container {
 	a {
 		margin-top: 0;
 	}
+}
+
+#main_area .panel {
+	border-radius: 0;
+}
+.disp_login, .disp_register {
+	#main_area .skin-form .panel-body {
+		padding-bottom: 0;
+		.evo_form__register {
+			.control-buttons {
+				margin: 0;
+			}
+			.btn-primary {
+				padding: 8px 12px;
+				font-size: 14px;
+			}
+		}
+	}
+}
+.disp_lostpassword #main_area .wrap-form-login .controls {
+	text-align: center;
+}
+#main_area .wrap-form-login {
+	.control-label {
+		display: none;
+	}
+	.control-buttons {
+		margin: 0;
+	}
+	.controls {
+		width: 100%;
+	}
+	
+	.btn-success {
+		padding: 8px 12px;
+		font-size: 14px;
+	}
+	.btn-primary {
+        background-color: #34495E;
+        border-color: #34495E;
+        -webkit-transition: all 0.32s ease;
+        -o-transition: all 0.32s ease;
+        transition: all 0.32s ease;
+	    color: #fff;
+		padding: 8px 12px;
+		font-size: 14px;
+
+        &:hover, &:active, &:focus{
+          background-color: #2ECC71;
+          border-color: #2ECC71;
+          box-shadow: none;
+          outline: none;
+        }
+	}
+}
+.profile_buttons a.btn-danger button,
+.profile_buttons a.btn-warning button {
+	color: #fff;
+}
+#feedbacks > h4 {
+	float: left;
+    margin: 26px 0 0;
 }
