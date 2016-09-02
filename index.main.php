@@ -141,7 +141,7 @@ siteskin_include( '_site_body_header.inc.php' );
 <div class="container main-content">
 	<!-- <div class="row"> -->
 		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?> " <?php
-				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;padding:0 0 0 30px;"' : '' ); ?>>
+				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
 
 			<!-- Open Main area Section -->
 			<div id="main_area" >
@@ -209,7 +209,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	<?php
 	if( $disp != 'front' && $disp != 'download' && $disp != 'search' )
 	{
-		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
+	/*	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 		mainlist_page_links( array(
 				'block_start' => '<div class="center"><ul class="pagination">',
 				'block_end' => '</ul></div>',
@@ -218,7 +218,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				'page_item_after' => '</li>',
 				                'prev_text' => '<i class="fa fa-angle-left"></i>',
                 'next_text' => '<i class="fa fa-angle-right"></i>',
-			) );
+			) );*/
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	?>
 
@@ -270,7 +270,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 	<?php
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-		mainlist_page_links( array(
+		/*mainlist_page_links( array(
 				'block_start' => '<div class="center"><ul class="pagination">',
 				'block_end' => '</ul></div>',
 				'page_current_template' => '<span><b>$page_num$</b></span>',
@@ -278,7 +278,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				'page_item_after' => '</li>',
                 'prev_text' => '<i class="fa fa-angle-left"></i>',
                 'next_text' => '<i class="fa fa-angle-right"></i>',
-			) );
+			) );*/
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	}
 	?>
@@ -300,15 +300,18 @@ siteskin_include( '_site_body_header.inc.php' );
 					'item_selected_end'   => '</li>',
 					'block_end'           => '</ul>',
 				),
-				'pagination' => array(
-					'block_start'           => '<div class="center"><ul class="pagination">',
-					'block_end'             => '</ul></div>',
-					'page_current_template' => '<span><b>$page_num$</b></span>',
-					'page_item_before'      => '<li>',
-					'page_item_after'       => '</li>',
-					'prev_text' => '<i class="fa fa-angle-left"></i>',
-					'next_text' => '<i class="fa fa-angle-right"></i>',
-				),
+					// Pagination
+					'pagination' => array(
+						'block_start'           => '<div class="center"><ul class="pagination">',
+						'block_end'             => '</ul></div>',
+						'page_current_template' => '<span>$page_num$</span>',
+						'page_item_before'      => '<li>',
+						'page_item_after'       => '</li>',
+						'page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+						'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
+						'next_text'             => '<i class="fa fa-angle-double-right"></i>',
+					),
 				// Form params for the forms below: login, register, lostpassword, activateinfo and msgform
 				'skin_form_before'      => '<div class="panel panel-default skin-form">'
 																			.'<div class="panel-heading">'

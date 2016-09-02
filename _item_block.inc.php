@@ -14,7 +14,7 @@
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
-global $Item, $Skin;
+global $Item, $Skin, $app_version;
 
 // Default params:
 $params = array_merge( array(
@@ -56,7 +56,7 @@ echo '<div class="styled_content_block">'; // Beginning of post display
 			$Item->title( array(
 					'before'    => $title_before,
 					'after'     => $title_after,
-					'link_type' => 'permalink'
+					'link_type' => '#'
 				) );
 		}
 	?>
@@ -121,12 +121,15 @@ echo '<div class="styled_content_block">'; // Beginning of post display
 	?>
 
 	<?php
+		if( ! $Item->is_intro() )
+		{
 		// List all tags attached to this post:
 		$Item->tags( array(
 				'before'    => '<div class="small tag_content">'.T_('Tags').': ',
 				'after'     => '</div>',
 				'separator' => ', ',
 			) );
+		}
 	?>
 
 	<div class="small comment_content">
@@ -165,6 +168,27 @@ echo '<div class="styled_content_block">'; // Beginning of post display
 		// Note: You can customize the default item feedback by copying the generic
 		// /skins/_item_feedback.inc.php file into the current skin folder.
 		// ---------------------- END OF FEEDBACK (COMMENTS/TRACKBACKS) ---------------------
+	?>
+	
+	<?php
+	if( evo_version_compare( $app_version, '6.7' ) >= 0 )
+	{	// We are running at least b2evo 6.7, so we can include this file:
+		// ------------------ WORKFLOW PROPERTIES INCLUDED HERE ------------------
+		skin_include( '_item_workflow.inc.php' );
+		// ---------------------- END OF WORKFLOW PROPERTIES ---------------------
+	}
+	?>
+
+	<?php
+	if( evo_version_compare( $app_version, '6.7' ) >= 0 )
+	{	// We are running at least b2evo 6.7, so we can include this file:
+		// ------------------ META COMMENTS INCLUDED HERE ------------------
+		skin_include( '_item_meta_comments.inc.php', array(
+				'comment_start'         => '<article class="evo_comment evo_comment__meta panel panel-default">',
+				'comment_end'           => '</article>',
+			) );
+		// ---------------------- END OF META COMMENTS ---------------------
+	}
 	?>
 
 	<?php

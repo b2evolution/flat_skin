@@ -444,8 +444,13 @@ div.bSideItem {
 }
 
 // Pagination
-.pagination {
+#main_area .pagination {
 	margin: 0;
+	
+	li.active a {
+		background-color: #2ECC71;
+		border-color: #2ECC71;
+	}
 }
 
 // Messages
@@ -690,3 +695,7 @@ div.action_messages, div.log_container {
 	float: left;
     margin: 26px 0 0;
 }
+  
+  .widget_core_coll_comment_list a:hover {
+	background-color: transparent !important;
+  }

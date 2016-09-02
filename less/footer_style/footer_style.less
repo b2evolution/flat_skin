@@ -30,7 +30,15 @@ footer#footer{
       font-size: 24px;
       margin: 20px 0;
     }
-
+  &.widget_core_coll_category_list,
+  &.widget_plugin_evo_Arch,
+  &.widget_core_content_hierarchy,
+  &.widget_core_coll_item_list.evo_layout_list,
+  &.widget_core_coll_featured_posts.evo_layout_list,
+  &.widget_core_coll_post_list.evo_layout_list,
+  &.widget_core_coll_page_list.evo_layout_list,
+  &.widget_core_coll_related_post_list.evo_layout_list,
+  &.widget_core_coll_comment_list
     ul{
       list-style-type: none;
       margin: 0;
@@ -39,6 +47,7 @@ footer#footer{
 
       li{
 
+        list-style-type: none;
         padding: 12px 0;
 
         a{
@@ -231,7 +240,12 @@ footer#footer{
 
           a{
             padding-left: 0;
-            text-transform: capitalize;
+            text-transform: capitalize;            
+			
+			&:last-child{
+              display: inline;
+              padding: 0px;
+			}
 
             &:before{
               left: -15px;
