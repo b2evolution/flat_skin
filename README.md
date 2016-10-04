@@ -25,3 +25,8 @@ For preview full size, you can open image on new tab and zoom 100%.
 ### Single Post Page
 
 ![disp=single](skinshot_single.png)
+
+### Update Log
+
+#### v1.0.1
+- comment form fix (for b2evolution v6.7.7-stable+)
