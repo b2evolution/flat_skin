@@ -241,8 +241,6 @@ siteskin_include( '_site_body_header.inc.php' );
 					'comment_text_after'    => '</div>',
 					'comment_info_before'   => '<div class="evoComment-info clear text-muted"><small>',
 					'comment_info_after'    => '</small></div></div>',
-					'preview_start'         => '<div class="panel panel-warning" id="comment_preview">',
-					'preview_end'           => '</div>',
 					'comment_attach_info'   => get_icon( 'help', 'imgtag', array(
 							'data-toggle'    => 'tooltip',
 							'data-placement' => 'bottom',
