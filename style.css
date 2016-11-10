@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,500,700,900);
 /*============================================================
 =                    Skin Info              							   =
 =============================================================*
@@ -12,7 +13,6 @@
  * 1.0 BASIC STRUCTURE
  * -----------------------------------------------------------------------------
  */
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,500,700,900);
 div.widget_core_coll_item_list.evo_layout_rwd .widget_rwd_content,
 div.widget_core_coll_featured_posts.evo_layout_rwd .widget_rwd_content,
 div.widget_core_coll_post_list.evo_layout_rwd .widget_rwd_content,
@@ -428,7 +428,6 @@ div.widget_core_coll_related_post_list.evo_withexcerpt.evo_noteaser div.item_exc
   line-height: 13px;
   white-space: nowrap;
   vertical-align: middle;
-  -ms-touch-action: manipulation;
   touch-action: manipulation;
   cursor: pointer;
   -webkit-user-select: none;
@@ -437,7 +436,7 @@ div.widget_core_coll_related_post_list.evo_withexcerpt.evo_noteaser div.item_exc
   user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  color: #333;
+  color: #333333;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
@@ -567,7 +566,7 @@ div.widget_core_user_avatars.evo_layout_rwd img {
 }
 .widget_core_org_members {
   margin: 5em 0 30px;
-  color: #333;
+  color: #333333;
 }
 .widget_core_org_members div.widget_rwd_content {
   text-align: center;
@@ -588,7 +587,7 @@ div.widget_core_user_avatars.evo_layout_rwd img {
   font-size: 18px;
 }
 .widget_core_org_members a.user_link {
-  color: #000;
+  color: #000000;
 }
 .widget_core_org_members a.user_link:hover {
   color: #23527c;
@@ -985,7 +984,8 @@ div.bSideItem h4 {
 #main_area .pagination {
   margin: 0;
 }
-#main_area .pagination li.active a {
+#main_area .pagination li.active a,
+#main_area .pagination li.active span {
   background-color: #2ECC71;
   border-color: #2ECC71;
 }
@@ -1310,7 +1310,7 @@ nav#nav .nav-tabs li.active > a:hover {
   background-color: #34495E;
   border: 1px solid #34495E;
   padding: 6px 15px;
-  margin: 0 2px;
+  margin: 2px;
   border-radius: 3px;
   color: #fff;
   font-size: 14px;
@@ -2448,7 +2448,7 @@ body.disp_sitemap #main_area .widget_core_coll_category_list ul > ul > li::last-
   padding-top: 10px;
 }
 #main_sidebar .panel.widget.widget_core_user_links .ufld_icon_links a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 #main_sidebar .panel.widget.widget_plugin_evo_Calr {
   padding: 30px;
