@@ -928,7 +928,6 @@ nav#nav .nav-tabs li.active > a:hover {
 }
 #main_area .pager li.previous,
 #main_area .pager li.next {
-  width: 48%;
   vertical-align: middle;
   position: relative;
   overflow: hidden;
