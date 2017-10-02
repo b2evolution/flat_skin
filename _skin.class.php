@@ -21,7 +21,7 @@ class flat_Skin extends Skin
 	 * Skin version
 	 * @var string
 	 */
-	var $version = '1.0.3';
+	var $version = '1.0.4';
 
 	/**
 	 * Do we want to use style.min.css instead of style.css ?
@@ -88,7 +88,7 @@ class flat_Skin extends Skin
 		$supported_kinds = array(
 			'main'   => 'no',
 			'std'    => 'yes',		// Blog
-			'photo'  => 'yes',
+			'photo'  => 'maybe',
 			'forum'  => 'no',
 			'manual' => 'maybe',
 			'group'  => 'no',  // Tracker
