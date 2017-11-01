@@ -45,38 +45,31 @@ siteskin_include( '_site_body_header.inc.php' );
 		<div class="container">
 		<?php
 		if( $Skin->is_visible_container( 'header' ) )
-		{ // Display 'Page Top' widget container
-		?>
-			<div class="col-xs-12 col-sm-6 col-md-8">
-				<div class="pageHeader">
-					<?php
+		{	// Display 'Page Top' widget container:
 						// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-						// Display container and contents:
-						skin_container( NT_('Header'), array(
+						widget_container( 'header', array(
 								// The following params will be used as defaults for widgets included in this container:
-								'block_start'       => '<div class="widget $wi_class$">',
+								'container_display_if_empty' => false, // If no widget, don't display container at all
+								'container_start'   => '<div class="col-xs-12 col-sm-6 col-md-8"><div class="pageHeader evo_container $wico_class$">',
+								'container_end'     => '</div></div>',
+								'block_start'       => '<div class="evo_widget $wi_class$">',
 								'block_end'         => '</div>',
 								'block_title_start' => '<h1>',
 								'block_title_end'   => '</h1>',
 							) );
 						// ----------------------------- END OF "Header" CONTAINER -----------------------------
-					?>
-				</div>
-			</div>
-		<?php } ?>
+		} ?>
 
 		<?php
 		if( $Skin->is_visible_container( 'page_top' ) )
-		{ // Display 'Page Top' widget container
-		?>
-			<div class="col-xs-12 col-sm-6 col-md-4">
-				<div class="PageTop">
-				<?php
+		{	// Display 'Page Top' widget container:
 					// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
-					// Display container and contents:
-					skin_container( NT_('Page Top'), array(
+					widget_container( 'page_top', array(
 							// The following params will be used as defaults for widgets included in this container:
-							'block_start'         => '<div class="widget $wi_class$">',
+							'container_display_if_empty' => false, // If no widget, don't display container at all
+							'container_start'     => '<div class="col-xs-12 col-sm-6 col-md-4"><div class="PageTop evo_container $wico_class$">',
+							'container_end'       => '</div></div>',
+							'block_start'         => '<div class="evo_widget $wi_class$">',
 							'block_end'           => '</div>',
 							'block_display_title' => false,
 							'list_start'          => '<ul>',
@@ -85,10 +78,7 @@ siteskin_include( '_site_body_header.inc.php' );
 							'item_end'            => '</li>',
 						) );
 					// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
-				?>
-				</div>
-			</div>
-		<?php } ?>
+		} ?>
 
 		</div>
 		<!-- end container header -->
@@ -112,30 +102,29 @@ siteskin_include( '_site_body_header.inc.php' );
 		    </div>
 
 
-				<div class="col-md-12 collapse navbar-collapse" id="flat_nav">
-					<ul class="nav nav-tabs navbar-nav">
 					<?php
 						// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
 						// Display container and contents:
 						// Note: this container is designed to be a single <ul> list
-						skin_container( NT_('Menu'), array(
+						widget_container( 'menu', array(
 								// The following params will be used as defaults for widgets included in this container:
+								'container_display_if_empty' => false, // If no widget, don't display container at all
+								'container_start'     => '<div class="col-md-12 collapse navbar-collapse" id="flat_nav"><ul class="nav nav-tabs navbar-nav evo_container $wico_class$">',
+								'container_end'       => '</ul></div>',
 								'block_start'         => '',
 								'block_end'           => '',
 								'block_display_title' => false,
 								'list_start'          => '',
 								'list_end'            => '',
-								'item_start'          => '<li>',
+								'item_start'          => '<li class="evo_widget $wi_class$">',
 								'item_end'            => '</li>',
-								'item_selected_start' => '<li class="active">',
+								'item_selected_start' => '<li class="active evo_widget $wi_class$">',
 								'item_selected_end'   => '</li>',
 								'item_title_before'   => '',
 								'item_title_after'    => '',
 							) );
 						// ----------------------------- END OF "Menu" CONTAINER -----------------------------
 					?>
-					</ul>
-				</div>
 			</div>
 			<!-- end row menu -->
 		</div>
@@ -187,15 +176,14 @@ siteskin_include( '_site_body_header.inc.php' );
 	<?php
 	if( $Skin->get_setting( 'layout' ) != 'single_column' )
 	{
-	?>
-		<div id="main_sidebar" class="col-md-4"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;border-left:none;"' : '' ); ?>>
-	<?php
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
-		// Display container contents:
-		skin_container( NT_('Sidebar'), array(
+		widget_container( 'sidebar', array(
 				// The following (optional) params will be used as defaults for widgets included in this container:
+				'container_display_if_empty' => false, // If no widget, don't display container at all
+				'container_start' => '<div id="main_sidebar" class="col-md-4 evo_container $wico_class$"'.( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;border-left:none;"' : '' ).'>',
+				'container_end'   => '</div>',
 				// This will enclose each widget in a block:
-				'block_start' => '<div class="panel panel-default widget $wi_class$">',
+				'block_start' => '<div class="panel panel-default evo_widget $wi_class$">',
 				'block_end' => '</div>',
 				// This will enclose the title of each widget:
 				'block_title_start' => '<div class="panel-heading"><h4 class="panel-title">',
@@ -223,9 +211,8 @@ siteskin_include( '_site_body_header.inc.php' );
 				'search_submit_after'  => '</span></div>',
 			) );
 		// ----------------------------- END OF "Sidebar" CONTAINER -----------------------------
-	?>
-		</div>
-	<?php } } ?>
+	}
+	} ?>
 	<!-- </div> -->
 
 </div>
@@ -236,39 +223,37 @@ if( $Skin->is_visible_container( 'footer' ) )
 { // Display 'Footer' widget container
 ?>
 <!-- =================================== START OF FOOTER =================================== -->
-<footer id="footer">
-	<div class="container">
-		<!-- <div class="row"> -->
 				<?php
-					// Display container and contents:
-					skin_container( NT_("Sidebar 2"), array(
-							'block_start' => '<div class="col-md-3 evo_widget widget $wi_class$">',
+					// ------------------------- "Sidebar 2" CONTAINER EMBEDDED HERE --------------------------
+					widget_container( 'sidebar_2', array(
+							// The following params will be used as defaults for widgets included in this container:
+							'container_display_if_empty' => false, // If no widget, don't display container at all
+							'container_start' => '<div class="container evo_container $wico_class$">',
+							'container_end'   => '<div class="clearfix"></div></div>',
+							'block_start' => '<div class="col-md-3 evo_widget $wi_class$">',
 							'block_end'  => '</div>',
 							'item_start' => '<li>',
 							'item_end' => '</li>',
-							// The following params will be used as defaults for widgets included in this container:
+							
 						) );
-					// Note: Double quotes have been used around "Footer" only for test purposes.
+					// ----------------------------- END OF "Sidebar 2" CONTAINER -----------------------------
 				?>
-			<div class="clearfix"></div>
-
-		<!-- </div> -->
-		<!-- End row Footer -->
-	</div>
-	<!-- End container footer -->
 
 	<div class="footer_copyright">
 		<div class="container">
 
-			<div class="col-md-12 center">
 				<?php
-					// Display container and contents:
-					skin_container( NT_("Footer"), array(
+					// ------------------------- "Footer" CONTAINER EMBEDDED HERE --------------------------
+					widget_container( 'footer', array(
 							// The following params will be used as defaults for widgets included in this container:
+							'container_display_if_empty' => false, // If no widget, don't display container at all
+							'container_start' => '<div class="col-md-12 center evo_container $wico_class$">',
+							'container_end'   => '</div>',
+							'block_start'     => '<div class="evo_widget $wi_class$">',
+							'block_end'       => '</div>',
 						) );
-					// Note: Double quotes have been used around "Footer" only for test purposes.
+					// ----------------------------- END OF "Footer" CONTAINER -----------------------------
 				?>
-			</div>
 
 			<p class="copyright">
 				<?php
