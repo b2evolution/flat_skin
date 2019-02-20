@@ -532,7 +532,6 @@ siteskin_include( '_site_body_header.inc.php' );
 <!-- End Container fluid-->
 
 <!-- JS Include -->
-<script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/main.js"></script>
 
 <?php
